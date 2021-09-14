@@ -11,12 +11,11 @@ function App() {
     <div
       className="App"
       style={{
-        backgroundColor: `${COLORS.darkgrey}`,
+        backgroundColor: `${COLORS.darkGrey}`,
         color: `${COLORS.whitish}`,
       }}
     >
       <Header />
-
       <Main />
       <Footer />
       <Component1 />
