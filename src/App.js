@@ -1,11 +1,15 @@
 import './App.css';
+import Component1 from './components/component1/component1.component';
+import Header from './components/header/header.component';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>EZ Resume Builder</p>
-      </header>
+      <Header />
+
+      {/* <Main />
+      <Footer /> */}
+      <Component1 />
     </div>
   );
 }
