@@ -1,0 +1,11 @@
+.personal-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.personal-info-label {
+  font-size: x-large;
+  display: flex;
+  padding: 10px 10px 0 10px;
+  border: 1px solid red;
+}

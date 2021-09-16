@@ -1,5 +1,6 @@
 import React from 'react';
 import FormInput from '../form-input/form-input.component';
+import './personal-info.styles.scss';
 
 class PersonalInfo extends React.Component {
   constructor(props) {
@@ -29,16 +30,44 @@ class PersonalInfo extends React.Component {
     return (
       <form className="personal-info" name="sss">
         {/* <FormInput type="text" handleChange={this.handleChange} name="aname" /> */}
-
+        <label className="personal-info-label">Personal Info</label>
+        <FormInput
+          aName="name"
+          handleChange={this.handleChange}
+          label="Name"
+          type="text"
+          // value={this.state.email}
+          // aotherCssClasses="email"
+          required
+        />
+        <FormInput
+          aName="title"
+          handleChange={this.handleChange}
+          label="Title"
+          type="text"
+          // value={this.state.email}
+          // aotherCssClasses="email"
+          required
+        />
         <FormInput
           aName="emaileer"
           handleChange={this.handleChange}
-          label="haa"
+          label="Email"
           type="email"
           // value={this.state.email}
           // aotherCssClasses="email"
           required
         />
+        <FormInput
+          aName="phone-number"
+          handleChange={this.handleChange}
+          label="Phone Number"
+          type="tel"
+          // value={this.state.email}
+          // aotherCssClasses="email"
+          required
+        />
+
         {/* <FormInput />
         <label htmlFor="name">Name</label>
         <input type="text" id="name" value="name" name="name" />

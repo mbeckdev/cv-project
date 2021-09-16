@@ -10,7 +10,12 @@ const FormInput = ({
 }) => {
   return (
     <div className="form-input-container">
-      <input className="form-input" onChange={handleChange} name={aName} />
+      <input
+        className="form-input"
+        onChange={handleChange}
+        name={aName}
+        {...otherProps}
+      />
       <label className="form-input-label">{label}</label>
     </div>
   );
