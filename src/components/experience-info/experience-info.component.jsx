@@ -6,22 +6,36 @@ class ExperienceInfo extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      name: '',
-      title: '',
-      email: '',
-      phoneNumber: '',
-      description: '',
-    };
+    this.state = this.props.experience;
+
+    // name: '',
+    // title: '',
+    // email: '',
+    // phoneNumber: '',
+    // description: '',
+
+    // position: '',
+    // mainTasks: '',
+    // company: '',
+    // city: '',
+    // from: '',
+    // to: '',
   }
 
   handleChange = (e) => {
-    console.log('hi');
-    console.log(e);
-    console.log(e.target);
-    console.log(e.target.value);
-    console.log(e.target.name);
-    console.log(`e.target.type = ${e.target.type}`);
+    // console.log('hi');
+    // console.log(e);
+    // console.log(e.target);
+    // console.log(e.target.value);
+    // console.log(e.target.name);
+    // console.log(`e.target.type = ${e.target.type}`);
+
+    const value = e.target.value;
+    const name = e.target.name;
+    this.setState({ [name]: value }, () => {
+      console.log(this.state);
+    });
+
     // console.log(e.target.aothercssclasses);
     // console.log(e.target.aname);
   };
@@ -36,6 +50,15 @@ class ExperienceInfo extends React.Component {
           handleChange={this.handleChange}
           label="Position"
           type="text"
+          // value={this.state.email}
+          // aotherCssClasses="email"
+          required
+        />
+        <FormInput
+          aName="main-tasks"
+          handleChange={this.handleChange}
+          label="Main Tasks"
+          type="textarea"
           // value={this.state.email}
           // aotherCssClasses="email"
           required

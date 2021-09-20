@@ -16,12 +16,27 @@ class PersonalInfo extends React.Component {
   }
 
   handleChange = (e) => {
-    console.log('hi');
-    console.log(e);
+    console.log('this.state (personal) = ', this.state);
+
+    let whichStateProp = e.target.name; // like title or email
+
+    this.setState(
+      (prevState, props) => ({ [whichStateProp]: e.target.value }),
+      () => {
+        console.log('after setState this.state (personal) =', this.state);
+      }
+    );
+
+    // console.log('hi');
+    // console.log(e);
     console.log(e.target);
-    console.log(e.target.value);
-    console.log(e.target.name);
-    console.log(`e.target.type = ${e.target.type}`);
+
+    //e.target.name = name property like title or email
+
+    // console.log(e.target.value);
+    // console.log(e.target.name);
+    // console.log(`e.target.type = ${e.target.type}`);
+
     // console.log(e.target.aothercssclasses);
     // console.log(e.target.aname);
   };
@@ -50,7 +65,7 @@ class PersonalInfo extends React.Component {
           required
         />
         <FormInput
-          aName="emaileer"
+          aName="email"
           handleChange={this.handleChange}
           label="Email"
           type="email"
@@ -59,7 +74,7 @@ class PersonalInfo extends React.Component {
           required
         />
         <FormInput
-          aName="phone-number"
+          aName="phoneNumber"
           handleChange={this.handleChange}
           label="Phone Number"
           type="tel"
