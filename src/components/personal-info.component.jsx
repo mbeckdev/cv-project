@@ -87,6 +87,16 @@ class PersonalInfo extends React.Component {
           required
         />
 
+        <FormInput
+          aName="description"
+          handleChange={handleChange2}
+          // handleChange={this.handleChange}
+          label="Description"
+          type="text"
+          // value={this.state.email}
+          // aotherCssClasses="email"
+          required
+        />
         {/* <FormInput />
         <label htmlFor="name">Name</label>
         <input type="text" id="name" value="name" name="name" />
