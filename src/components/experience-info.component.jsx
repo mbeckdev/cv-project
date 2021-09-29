@@ -8,58 +8,26 @@ class ExperienceInfo extends React.Component {
 
     // this.state = this.props.experience;
     this.state = {
-      position: 'asdf',
+      position: '',
       'main-tasks': '',
       company: '',
       city: '',
       from: '',
       to: '',
     };
-
-    // name: '',
-    // title: '',
-    // email: '',
-    // phoneNumber: '',
-    // description: '',
-
-    // position: '',
-    // mainTasks: '',
-    // company: '',
-    // city: '',
-    // from: '',
-    // to: '',
   }
-
-  // handleChange = (e) => {
-  //   // console.log('hi');
-  //   // console.log(e);
-  //   // console.log(e.target);
-  //   // console.log(e.target.value);
-  //   // console.log(e.target.name);
-  //   // console.log(`e.target.type = ${e.target.type}`);
-
-  //   const value = e.target.value;
-  //   const name = e.target.name;
-  //   this.setState({ [name]: value }, () => {
-  //     console.log(this.state);
-  //   });
-
-  //   // console.log(e.target.aothercssclasses);
-  //   // console.log(e.target.aname);
-  // };
 
   render() {
     const handleChange2 = this.props.handleChange2;
     return (
-      <form className="experience-info" name="sss">
-        {/* <FormInput type="text" handleChange={this.handleChange} name="aname" /> */}
+      <form className="experience-info">
         <label className="experience-info-label">Experience Info</label>
         <FormInput
           aName="position"
           handleChange={handleChange2}
           label="Position"
           type="text"
-          // value={this.state.email}
+          // value={this.props.position}
           // aotherCssClasses="email"
           required
         />
@@ -68,7 +36,7 @@ class ExperienceInfo extends React.Component {
           handleChange={handleChange2}
           label="Main Tasks"
           type="textarea"
-          // value={this.state.email}
+          // value={this.props['main - task']}
           // aotherCssClasses="email"
           required
         />
@@ -77,7 +45,7 @@ class ExperienceInfo extends React.Component {
           handleChange={handleChange2}
           label="Company"
           type="text"
-          // value={this.state.email}
+          // value={this.props.company}
           // aotherCssClasses="email"
           required
         />
@@ -86,7 +54,7 @@ class ExperienceInfo extends React.Component {
           handleChange={handleChange2}
           label="City"
           type="text"
-          // value={this.state.email}
+          // value={this.props.city}
           // aotherCssClasses="email"
           required
         />
@@ -95,7 +63,7 @@ class ExperienceInfo extends React.Component {
           handleChange={handleChange2}
           label="From"
           type="date"
-          // value={this.state.email}
+          // value={this.props.from}
           // aotherCssClasses="email"
           required
         />
@@ -104,7 +72,7 @@ class ExperienceInfo extends React.Component {
           handleChange={handleChange2}
           label="To"
           type="date"
-          // value={this.state.email}
+          // value={this.props.to}
           // aotherCssClasses="email"
           required
         />

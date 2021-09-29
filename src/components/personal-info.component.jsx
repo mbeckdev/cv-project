@@ -40,18 +40,19 @@ class PersonalInfo extends React.Component {
 
   render() {
     const handleChange2 = this.props.handleChange2;
+    console.log('render personal-info, this.state= ', this.state, ' done');
     return (
       <form className="personal-info" name="sss">
         {/* <FormInput type="text" handleChange={this.handleChange} name="aname" /> */}
         <label className="personal-info-label">Personal Info</label>
-        <p>personal-info this.state.name= {this.state.name}</p>
+
         <FormInput
           aName="name"
           handleChange={handleChange2}
           // handleChange={this.handleChange}
           label="Name"
           type="text"
-          // value={this.state.email}
+          // value={this.props.name}
           // aotherCssClasses="email"
           required
         />
@@ -62,7 +63,7 @@ class PersonalInfo extends React.Component {
           // handleChange={this.handleChange}
           label="Title"
           type="text"
-          // value={this.state.email}
+          // value={this.props.title}
           // aotherCssClasses="email"
           required
         />
@@ -72,7 +73,7 @@ class PersonalInfo extends React.Component {
           // handleChange={this.handleChange}
           label="Email"
           type="email"
-          // value={this.state.email}
+          // value={this.props.email}
           // aotherCssClasses="email"
           required
         />
@@ -82,7 +83,7 @@ class PersonalInfo extends React.Component {
           // handleChange={this.handleChange}
           label="Phone Number"
           type="tel"
-          // value={this.state.email}
+          // value={this.props.phoneNumber}
           // aotherCssClasses="email"
           required
         />
@@ -93,7 +94,7 @@ class PersonalInfo extends React.Component {
           // handleChange={this.handleChange}
           label="Description"
           type="text"
-          // value={this.state.email}
+          // value={this.props.description}
           // aotherCssClasses="email"
           required
         />

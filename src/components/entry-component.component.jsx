@@ -1,23 +1,12 @@
-import React, { createFactory } from 'react';
+import React from 'react';
 import './entry-component.styles.scss';
 import PersonalInfo from './personal-info.component';
 import ExperienceInfo from './experience-info.component';
-
-// const EntryComponent = (props) => {
-//   return (
-//     <div className="entry-component">
-//       <PersonalInfo />
-//       <ExperienceInfo experience={props.experience} />
-//     </div>
-//   );
-// };
 
 class EntryComponent extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.state = this.props;
-    // this.state = this.props.theState;
     this.state = {
       personal: {
         name: '',
@@ -90,17 +79,12 @@ class EntryComponent extends React.Component {
         <PersonalInfo
           personal={this.state.personal}
           handleChange2={handleChange3}
-          // handleChange2={this.handleChange2}
         />
-        <p>
-          entry-component this.state.personal.name= {this.state.personal.name}
-        </p>
+
         <ExperienceInfo
           experience={this.state.experience}
           handleChange2={handleChange3}
-          // handleChange2={this.handleChange2}
         />
-        <p>hiyarr {this.state.experience.position}</p>
       </div>
     );
   }

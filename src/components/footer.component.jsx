@@ -12,7 +12,7 @@ const Footer = () => {
       }}
     >
       <span>
-        mbeckdev <a href="#">(githublink here)</a>
+        mbeckdev <a href="https://github.com/mbeckdev">(githublink here)</a>
       </span>
     </div>
   );
