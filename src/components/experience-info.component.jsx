@@ -1,12 +1,20 @@
 import React from 'react';
-import FormInput from '../form-input/form-input.component';
+import FormInput from './form-input.component';
 import './experience-info.styles.scss';
 
 class ExperienceInfo extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = this.props.experience;
+    // this.state = this.props.experience;
+    this.state = {
+      position: 'asdf',
+      'main-tasks': '',
+      company: '',
+      city: '',
+      from: '',
+      to: '',
+    };
 
     // name: '',
     // title: '',
@@ -22,32 +30,33 @@ class ExperienceInfo extends React.Component {
     // to: '',
   }
 
-  handleChange = (e) => {
-    // console.log('hi');
-    // console.log(e);
-    // console.log(e.target);
-    // console.log(e.target.value);
-    // console.log(e.target.name);
-    // console.log(`e.target.type = ${e.target.type}`);
+  // handleChange = (e) => {
+  //   // console.log('hi');
+  //   // console.log(e);
+  //   // console.log(e.target);
+  //   // console.log(e.target.value);
+  //   // console.log(e.target.name);
+  //   // console.log(`e.target.type = ${e.target.type}`);
 
-    const value = e.target.value;
-    const name = e.target.name;
-    this.setState({ [name]: value }, () => {
-      console.log(this.state);
-    });
+  //   const value = e.target.value;
+  //   const name = e.target.name;
+  //   this.setState({ [name]: value }, () => {
+  //     console.log(this.state);
+  //   });
 
-    // console.log(e.target.aothercssclasses);
-    // console.log(e.target.aname);
-  };
+  //   // console.log(e.target.aothercssclasses);
+  //   // console.log(e.target.aname);
+  // };
 
   render() {
+    const handleChange2 = this.props.handleChange2;
     return (
       <form className="experience-info" name="sss">
         {/* <FormInput type="text" handleChange={this.handleChange} name="aname" /> */}
         <label className="experience-info-label">Experience Info</label>
         <FormInput
           aName="position"
-          handleChange={this.handleChange}
+          handleChange={handleChange2}
           label="Position"
           type="text"
           // value={this.state.email}
@@ -56,7 +65,7 @@ class ExperienceInfo extends React.Component {
         />
         <FormInput
           aName="main-tasks"
-          handleChange={this.handleChange}
+          handleChange={handleChange2}
           label="Main Tasks"
           type="textarea"
           // value={this.state.email}
@@ -65,7 +74,7 @@ class ExperienceInfo extends React.Component {
         />
         <FormInput
           aName="company"
-          handleChange={this.handleChange}
+          handleChange={handleChange2}
           label="Company"
           type="text"
           // value={this.state.email}
@@ -74,7 +83,7 @@ class ExperienceInfo extends React.Component {
         />
         <FormInput
           aName="city"
-          handleChange={this.handleChange}
+          handleChange={handleChange2}
           label="City"
           type="text"
           // value={this.state.email}
@@ -83,7 +92,7 @@ class ExperienceInfo extends React.Component {
         />
         <FormInput
           aName="from"
-          handleChange={this.handleChange}
+          handleChange={handleChange2}
           label="From"
           type="date"
           // value={this.state.email}
@@ -92,7 +101,7 @@ class ExperienceInfo extends React.Component {
         />
         <FormInput
           aName="to"
-          handleChange={this.handleChange}
+          handleChange={handleChange2}
           label="To"
           type="date"
           // value={this.state.email}

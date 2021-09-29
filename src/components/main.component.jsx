@@ -1,8 +1,8 @@
 import React from 'react';
 import './main.styles.scss';
 
-import Preview from '../preview/preview.component';
-import EntryComponent from '../entry-component/entry-component.component';
+import Preview from './preview.component';
+import EntryComponent from './entry-component.component';
 
 // const Main = () => {
 //   return (
@@ -23,8 +23,8 @@ class Main extends React.Component {
         description: '',
       },
       experience: {
-        position: 'asdf',
-        mainTasks: '',
+        position: '',
+        'main-tasks': '',
         company: '',
         city: '',
         from: '',

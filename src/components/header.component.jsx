@@ -1,6 +1,6 @@
 import React from 'react';
 import './header.styles.scss';
-import COLORS from '../../colors';
+import COLORS from '../colors';
 
 const Header = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import './footer.styles.scss';
 
-import COLORS from '../../colors';
+import COLORS from '../colors';
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
       }}
     >
       <span>
-        mbeckdev <a>(githublink here)</a>
+        mbeckdev <a href="#">(githublink here)</a>
       </span>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import FormInput from '../form-input/form-input.component';
+import FormInput from './form-input.component';
 import './personal-info.styles.scss';
 
 class PersonalInfo extends React.Component {
@@ -15,49 +15,51 @@ class PersonalInfo extends React.Component {
     };
   }
 
-  handleChange = (e) => {
-    console.log('this.state (personal) = ', this.state);
+  // handleChange = (e) => {
+  //   console.log('this.state (personal) = ', this.state);
 
-    let whichStateProp = e.target.name; // like title or email
+  //   let whichStateProp = e.target.name; // like title or email
 
-    this.setState(
-      (prevState, props) => ({ [whichStateProp]: e.target.value }),
-      () => {
-        console.log('after setState this.state (personal) =', this.state);
-      }
-    );
+  //   this.setState(
+  //     (prevState, props) => ({ [whichStateProp]: e.target.value }),
+  //     () => {
+  //       console.log('after setState this.state (personal) =', this.state);
+  //     }
+  //   );
 
-    // console.log('hi');
-    // console.log(e);
-    console.log(e.target);
-
-    //e.target.name = name property like title or email
-
-    // console.log(e.target.value);
-    // console.log(e.target.name);
-    // console.log(`e.target.type = ${e.target.type}`);
-
-    // console.log(e.target.aothercssclasses);
-    // console.log(e.target.aname);
-  };
+  //   // console.log('hi');
+  //   // console.log(e);
+  //   console.log(e.target);
+  //   //e.target.name = name property like title or email
+  //   // console.log(e.target.value);
+  //   // console.log(e.target.name);
+  //   // console.log(`e.target.type = ${e.target.type}`);
+  //   // console.log(e.target.aothercssclasses);
+  //   // console.log(e.target.aname);
+  // };
 
   render() {
+    const handleChange2 = this.props.handleChange2;
     return (
       <form className="personal-info" name="sss">
         {/* <FormInput type="text" handleChange={this.handleChange} name="aname" /> */}
         <label className="personal-info-label">Personal Info</label>
+        <p>personal-info this.state.name= {this.state.name}</p>
         <FormInput
           aName="name"
-          handleChange={this.handleChange}
+          handleChange={handleChange2}
+          // handleChange={this.handleChange}
           label="Name"
           type="text"
           // value={this.state.email}
           // aotherCssClasses="email"
           required
         />
+
         <FormInput
           aName="title"
-          handleChange={this.handleChange}
+          handleChange={handleChange2}
+          // handleChange={this.handleChange}
           label="Title"
           type="text"
           // value={this.state.email}
@@ -66,7 +68,8 @@ class PersonalInfo extends React.Component {
         />
         <FormInput
           aName="email"
-          handleChange={this.handleChange}
+          handleChange={handleChange2}
+          // handleChange={this.handleChange}
           label="Email"
           type="email"
           // value={this.state.email}
@@ -75,7 +78,8 @@ class PersonalInfo extends React.Component {
         />
         <FormInput
           aName="phoneNumber"
-          handleChange={this.handleChange}
+          handleChange={handleChange2}
+          // handleChange={this.handleChange}
           label="Phone Number"
           type="tel"
           // value={this.state.email}
