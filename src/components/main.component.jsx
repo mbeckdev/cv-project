@@ -16,17 +16,18 @@ class Main extends React.Component {
 
     this.state = {
       personal: {
-        name: '',
-        title: '',
-        email: '',
-        phoneNumber: '',
-        description: '',
+        name: 'Bartholemew Lollipop',
+        title: 'Front end React developer',
+        email: 'bLollipop@gmail.com',
+        phoneNumber: '123-456-7890',
+        description:
+          'Looking for that first front-end react role coming from a mechanical engineering background',
       },
       experience: {
-        position: '',
-        'main-tasks': '',
-        company: '',
-        city: '',
+        position: 'Fry Cook',
+        'main-tasks': 'Cooking fries',
+        company: 'McBurger King',
+        city: 'Denver',
         from: '',
         to: '',
       },
