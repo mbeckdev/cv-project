@@ -21,17 +21,7 @@ const Preview = (props) => {
   return (
     <div className="preview">
       <div className="personal-section">
-        <div
-          className="nameTitle"
-          style={{
-            fontSize: '42px',
-            textAlign: 'left',
-            backgroundColor: '#154c79',
-            paddingLeft: '10px',
-          }}
-        >
-          {name}
-        </div>
+        <div className="nameTitle">{name}</div>
 
         <div
           className="title-and-email-and-phone"
@@ -79,7 +69,12 @@ const Preview = (props) => {
         </div>
       </div>
 
-      <div className="bottom-section" style={{ margin: 'auto 10px' }}>
+      <div
+        className="bottom-section"
+        style={{
+          margin: 'auto 10px',
+        }}
+      >
         <div
           className="description"
           style={{ textAlign: 'left', marginTop: '1rem' }}
