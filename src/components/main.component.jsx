@@ -28,8 +28,8 @@ class Main extends React.Component {
         'main-tasks': 'Cooking fries',
         company: 'McBurger King',
         city: 'Denver',
-        from: '',
-        to: '',
+        from: 'Jan 99',
+        to: 'Jan 00',
       },
     };
   }

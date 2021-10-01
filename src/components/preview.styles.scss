@@ -1,15 +1,70 @@
 .preview {
-  border: 1px solid red;
   width: 900px;
+  background-color: white;
+  color: black;
+  margin-top: 2rem;
+  box-shadow: 1px 1px 10px black;
 
-  .nameTitle {
-    font-size: x-large;
+  .personal-section {
+    .name-in-title {
+      font-size: x-large;
+      font-size: 42px;
+      text-align: left;
+      background-color: #154c79;
+      padding-left: 10px;
+    }
+
+    .title-and-email-and-phone {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      text-align: right;
+      background-color: #154c79;
+    }
+
+    .the-title {
+      font-size: larger;
+      text-align: left;
+      background-color: #154c79;
+      padding-left: 10px;
+    }
+
+    .name-and-email p {
+      text-align: right;
+      background-color: #154c79;
+      padding-right: 10px;
+    }
   }
 
-  .nameTitle {
-    font-size: 42px;
-    text-align: left;
-    background-color: #154c79;
-    padding-left: 10px;
+  .bottom-section {
+    margin: auto 10px;
+
+    .section {
+      margin-bottom: 20px;
+      text-align: left;
+      margin-top: 1rem;
+    }
+
+    hr {
+      margin: 2px 0;
+      border: 1px solid grey;
+    }
+
+    .experience-section {
+      display: flex;
+
+      .company-and-dates {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        margin-right: 20px;
+      }
+
+      .position-and-tasks {
+        display: flex;
+        flex-direction: column;
+      }
+    }
   }
 }
