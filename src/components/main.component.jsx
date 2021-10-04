@@ -42,9 +42,7 @@ class Main extends React.Component {
     console.log('e.target.value', e.target.value);
 
     let section = '';
-    if (
-      e.target.parentNode.parentNode.parentNode.className === 'personal-info'
-    ) {
+    if (e.target.parentNode.parentNode.className === 'personal-info') {
       section = 'personal';
     } else if (
       e.target.parentNode.parentNode.parentNode.className === 'experience-info'
