@@ -18,10 +18,10 @@ class ExperienceInfo extends React.Component {
     };
   }
 
-  handleAddClick = (e) => {
-    e.preventDefault();
-    console.log('handle add click');
-  };
+  // handleAddClick = (e) => {
+  //   e.preventDefault();
+  //   console.log('handle add click');
+  // };
 
   render() {
     const handleChange2 = this.props.handleChange2;
@@ -33,7 +33,8 @@ class ExperienceInfo extends React.Component {
         <p>old experience section starts here</p>
 
         <div className="button-container">
-          <button onClick={this.handleAddClick}>Add New Section</button>
+          <button onClick={this.props.handleAddClick}>Add New Section</button>
+          {/* <button onClick={this.handleAddClick}>Add New Section</button> */}
         </div>
       </form>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 import './form-input.styles.scss';
 
 const FormInput = ({ handleChange, aName, label, value, type }) => {
-  console.log('made forminput,', aName, ' ', label, ' ', value);
+  // console.log('made forminput,', aName, ' ', label, ' ', value);
 
   return (
     <div className="form-input-container">

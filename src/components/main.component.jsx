@@ -35,11 +35,11 @@ class Main extends React.Component {
   }
 
   handleChange3 = (e) => {
-    console.log('this.state (entry) = ', this.state);
+    // console.log('this.state (entry) = ', this.state);
 
     let whichStateProp = e.target.name; // like title or email
-    console.log('whichStateProp', whichStateProp);
-    console.log('e.target.value', e.target.value);
+    // console.log('whichStateProp', whichStateProp);
+    // console.log('e.target.value', e.target.value);
 
     let section = '';
     if (e.target.parentNode.parentNode.className === 'personal-info') {
@@ -66,20 +66,25 @@ class Main extends React.Component {
         console.log('after setState this.state (entry) =', this.state);
       }
     );
+    // console.log(e.target);
+
+    // console.log(e.target.parentNode.parentNode.className);
+    // console.log(e.target.parentNode.parentNode.parentNode.className);
+    // console.log('yo mama - handle changed just happened!');
 
     // console.log('hi');
     // console.log(e);
-    console.log(e.target);
-
-    console.log(e.target.parentNode.parentNode.className);
-    console.log(e.target.parentNode.parentNode.parentNode.className);
-    console.log('yo mama - handle changed just happened!');
     //e.target.name = name property like title or email
     // console.log(e.target.value);
     // console.log(e.target.name);
     // console.log(`e.target.type = ${e.target.type}`);
     // console.log(e.target.aothercssclasses);
     // console.log(e.target.aname);
+  };
+
+  handleAddClick = (e) => {
+    e.preventDefault();
+    console.log('handle Add Click inside of main');
   };
 
   setExperience = (e) => {
@@ -92,6 +97,7 @@ class Main extends React.Component {
         <EntryComponent
           theState={this.state}
           handleChange3={this.handleChange3}
+          handleAddClick={this.handleAddClick}
           setExp={this.setExperience}
         />
         <Preview theState={this.state} />

@@ -84,6 +84,7 @@ class EntryComponent extends React.Component {
         <ExperienceInfo
           experience={this.state.experience}
           handleChange2={handleChange3}
+          handleAddClick={this.props.handleAddClick}
         />
       </div>
     );
