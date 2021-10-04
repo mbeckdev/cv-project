@@ -42,12 +42,17 @@ class Main extends React.Component {
     console.log('e.target.value', e.target.value);
 
     let section = '';
-    if (e.target.parentNode.parentNode.className === 'personal-info') {
+    if (
+      e.target.parentNode.parentNode.parentNode.className === 'personal-info'
+    ) {
       section = 'personal';
-    } else if (e.target.parentNode.parentNode.className === 'experience-info') {
+    } else if (
+      e.target.parentNode.parentNode.parentNode.className === 'experience-info'
+    ) {
       section = 'experience';
     }
     console.log('section', section);
+
     // section = 'personal';
 
     this.setState(
@@ -66,10 +71,11 @@ class Main extends React.Component {
 
     // console.log('hi');
     // console.log(e);
-    console.log('yo mama');
     console.log(e.target);
 
     console.log(e.target.parentNode.parentNode.className);
+    console.log(e.target.parentNode.parentNode.parentNode.className);
+    console.log('yo mama - handle changed just happened!');
     //e.target.name = name property like title or email
     // console.log(e.target.value);
     // console.log(e.target.name);
