@@ -10,12 +10,12 @@ const Preview = (props) => {
   let email = props.theState.personal.email;
   let phoneNumber = props.theState.personal.phoneNumber;
   let description = props.theState.personal.description;
-  let position = props.theState.experiences[0].position;
-  let mainTasks = props.theState.experiences[0]['main-tasks'];
-  let company = props.theState.experiences[0].company;
-  let city = props.theState.experiences[0].city;
-  let from = props.theState.experiences[0].from;
-  let to = props.theState.experiences[0].to;
+  // let position = props.theState.experiences[0].position;
+  // let mainTasks = props.theState.experiences[0]['main-tasks'];
+  // let company = props.theState.experiences[0].company;
+  // let city = props.theState.experiences[0].city;
+  // let from = props.theState.experiences[0].from;
+  // let to = props.theState.experiences[0].to;
   console.log('preview see props === ', props);
 
   return (
@@ -56,34 +56,9 @@ const Preview = (props) => {
   );
 };
 
-// class Preview extends React.Component {
-//   constructor(props) {
-//     super(props);
-
-//     // this.state = this.props.theState;
-//   }
-
-//   render() {
-//     return (
-//       <div className="preview">
-//         <p>preview stuff here</p>
-//         <p>title is {this.props.theState.personal.title}</p>
-//       </div>
-//     );
-//   }
-// }
-
 export default Preview;
 
-// import React from 'react';
-
-function PreviewExperienceSection(
-  props
-  // {
-  // experience: { position, company, city, from, to, mainTasks as 'main-tasks' },
-
-  // }
-) {
+function PreviewExperienceSection(props) {
   let position = props.experience.position;
   // let position = props.theState.experiences[0].position;
   let mainTasks = props.experience['main-tasks'];
@@ -91,8 +66,7 @@ function PreviewExperienceSection(
   let city = props.experience.city;
   let from = props.experience.from;
   let to = props.experience.to;
-  // console.log('previewexperienceSection.props = ', props);
-  // console.log('previewexperienceSection.props = ', { position });
+
   let theseStyles = { margin: '10px 0' };
   return (
     <div className="preview-experience-section" style={theseStyles}>
