@@ -10,12 +10,12 @@ const Preview = (props) => {
   let email = props.theState.personal.email;
   let phoneNumber = props.theState.personal.phoneNumber;
   let description = props.theState.personal.description;
-  let position = props.theState.experience.position;
-  let mainTasks = props.theState.experience['main-tasks'];
-  let company = props.theState.experience.company;
-  let city = props.theState.experience.city;
-  let from = props.theState.experience.from;
-  let to = props.theState.experience.to;
+  let position = props.theState.experiences[0].position;
+  let mainTasks = props.theState.experiences[0]['main-tasks'];
+  let company = props.theState.experiences[0].company;
+  let city = props.theState.experiences[0].city;
+  let from = props.theState.experiences[0].from;
+  let to = props.theState.experiences[0].to;
 
   return (
     <div className="preview">

@@ -12,6 +12,7 @@ class ExperienceSection extends React.Component {
       city: '',
       from: '',
       to: '',
+      key: '',
     };
 
     console.log('this.state', this.state);
@@ -25,7 +26,7 @@ class ExperienceSection extends React.Component {
     const handleChange9 = this.props.handleChange9;
 
     return (
-      <div className="experience-section">
+      <div className="experience-section" key={this.props.key}>
         <p>experience section here</p>
 
         <FormInput
@@ -87,10 +88,10 @@ class ExperienceSection extends React.Component {
   }
 }
 
-{
-}
-{
-  /* <FormInput
+// {
+// }
+// {
+/* <FormInput
           aName="position"
           handleChange={handleChange2}
           label="Position"
@@ -99,6 +100,6 @@ class ExperienceSection extends React.Component {
           // aotherCssClasses="email"
           required
         /> */
-}
+// }
 
 export default ExperienceSection;

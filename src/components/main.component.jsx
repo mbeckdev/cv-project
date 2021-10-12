@@ -23,14 +23,26 @@ class Main extends React.Component {
         description:
           'Looking for that first front-end react role coming from a mechanical engineering background',
       },
-      experience: {
-        position: 'Fry Cook',
-        'main-tasks': 'Cooking fries',
-        company: 'McBurger King',
-        city: 'Denver',
-        from: 'Jan 99',
-        to: 'Jan 00',
-      },
+      experiences: [
+        {
+          position: 'Fry Cook',
+          'main-tasks': 'Cooking fries',
+          company: 'McBurger King',
+          city: 'Denver',
+          from: 'Jan 99',
+          to: 'Jan 00',
+          id: '0',
+        },
+        {
+          position: 'Fry Cook2',
+          'main-tasks': 'Cooking fries2',
+          company: 'McBurger King2',
+          city: 'Denver2',
+          from: 'Jan 00',
+          to: 'Jan 01',
+          id: '1',
+        },
+      ],
     };
   }
 
@@ -44,28 +56,63 @@ class Main extends React.Component {
     let section = '';
     if (e.target.parentNode.parentNode.className === 'personal-info') {
       section = 'personal';
+      this.setState(
+        (prevState, props) => ({
+          // [section]: { [whichStateProp]: e.target.value },
+
+          [section]: {
+            ...prevState[section],
+            [whichStateProp]: e.target.value,
+          },
+        }),
+        () => {
+          console.log('after setState this.state (entry) =', this.state);
+        }
+      );
     } else if (
       e.target.parentNode.parentNode.parentNode.className === 'experience-info'
     ) {
-      section = 'experience';
+      section = 'experiences';
+      // this.setState(
+      //   (prevState, props) => ({
+      //     // [section]: { [whichStateProp]: e.target.value },
+
+      //     experiences[0]: {
+      //       ...prevState.experiences[0],
+      //       [whichStateProp]: e.target.value,
+      //     },
+      //   }),
+      //   () => {
+      //     console.log('after setState this.state (entry) =', this.state);
+      //   }
+      // );
     }
+    console.log(
+      'e.target.parentNode.parentNode.className',
+      e.target.parentNode.parentNode.className
+    );
+    console.log(
+      'e.target.parentNode.parentNode.parentNode.className',
+      e.target.parentNode.parentNode.parentNode.className
+    );
     console.log('section', section);
+    console.log('e.target.value', e.target.value);
 
     // section = 'personal';
 
-    this.setState(
-      (prevState, props) => ({
-        // [section]: { [whichStateProp]: e.target.value },
+    // this.setState(
+    //   (prevState, props) => ({
+    //     // [section]: { [whichStateProp]: e.target.value },
 
-        [section]: {
-          ...prevState[section],
-          [whichStateProp]: e.target.value,
-        },
-      }),
-      () => {
-        console.log('after setState this.state (entry) =', this.state);
-      }
-    );
+    //     [section]: {
+    //       ...prevState[section],
+    //       [whichStateProp]: e.target.value,
+    //     },
+    //   }),
+    //   () => {
+    //     console.log('after setState this.state (entry) =', this.state);
+    //   }
+    // );
     // console.log(e.target);
 
     // console.log(e.target.parentNode.parentNode.className);

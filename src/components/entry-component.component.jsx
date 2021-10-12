@@ -15,14 +15,26 @@ class EntryComponent extends React.Component {
         phoneNumber: '',
         description: '',
       },
-      experience: {
-        position: '',
-        'main-tasks': '',
-        company: '',
-        city: '',
-        from: '',
-        to: '',
-      },
+      experiences: [
+        {
+          position: '',
+          'main-tasks': '',
+          company: '',
+          city: '',
+          from: '',
+          to: '',
+          key: '',
+        },
+        {
+          position: '',
+          'main-tasks': '',
+          company: '',
+          city: '',
+          from: '',
+          to: '',
+          key: '',
+        },
+      ],
     };
 
     console.log(this.state);
@@ -82,7 +94,7 @@ class EntryComponent extends React.Component {
         />
 
         <ExperienceInfo
-          experience={this.state.experience}
+          experiences={this.state.experiences}
           handleChange2={handleChange3}
           handleAddClick={this.props.handleAddClick}
         />
