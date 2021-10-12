@@ -96,23 +96,16 @@ class ExperienceSection extends React.Component {
           // aotherCssClasses="email"
           required
         />
+        <button
+          onClick={(e, thisExperience) =>
+            this.props.handleDeleteExperienceClick(e, this.props.theExperience)
+          }
+        >
+          Delete This Experience Section
+        </button>
       </div>
     );
   }
 }
-
-// {
-// }
-// {
-/* <FormInput
-          aName="position"
-          handleChange={handleChange2}
-          label="Position"
-          type="text"
-          // value={this.props.position}
-          // aotherCssClasses="email"
-          required
-        /> */
-// }
 
 export default ExperienceSection;

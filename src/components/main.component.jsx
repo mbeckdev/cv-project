@@ -218,6 +218,26 @@ class Main extends React.Component {
     );
   };
 
+  handleDeleteExperienceClick = (e, thisExperience) => {
+    e.preventDefault();
+    // console.log('handleDeleteExperienceClick');
+    // console.log(e.target);
+    // console.log('thisExperience = ', thisExperience);
+
+    // find the index of it
+    let thisIndex = this.state.experiences.findIndex(
+      (item) => item.id === thisExperience.id
+    );
+
+    let newExperiences = this.state.experiences;
+    // newExperiences[thisIndex]
+    newExperiences.splice(thisIndex, 1);
+
+    this.setState({ experiences: newExperiences });
+
+    console.log('e.target', e.target);
+  };
+
   setExperience = (e) => {
     this.setState({ experience: e });
   };
@@ -229,6 +249,9 @@ class Main extends React.Component {
           theState={this.state}
           handleChange3={this.handleChange3}
           handleAddExperienceClick={this.handleAddExperienceClick}
+          handleDeleteExperienceClick={(e, thisExperience) =>
+            this.handleDeleteExperienceClick(e, thisExperience)
+          }
           setExp={this.setExperience}
         />
         <Preview theState={this.state} />
