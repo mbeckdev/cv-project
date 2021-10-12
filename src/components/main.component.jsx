@@ -1,5 +1,5 @@
 import React from 'react';
-import './main.styles.scss';
+import '../styles/main.styles.scss';
 import uniqid from 'uniqid';
 
 import Preview from './preview.component';

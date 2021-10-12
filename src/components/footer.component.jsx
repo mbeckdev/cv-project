@@ -1,5 +1,5 @@
 import React from 'react';
-import './footer.styles.scss';
+import '../styles/footer.styles.scss';
 
 import COLORS from '../colors';
 

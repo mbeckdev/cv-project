@@ -1,6 +1,6 @@
 import React from 'react';
 import FormInput from './form-input.component';
-import './personal-info.styles.scss';
+import '../styles/personal-info.styles.scss';
 
 class PersonalInfo extends React.Component {
   render() {

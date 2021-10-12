@@ -1,6 +1,6 @@
 import React from 'react';
 // import FormInput from './form-input.component';
-import './experience-info.styles.scss';
+import '../styles/experience-info.styles.scss';
 import ExperienceSection from './experience-section.component';
 
 class ExperienceInfo extends React.Component {

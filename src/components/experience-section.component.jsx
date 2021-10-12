@@ -40,8 +40,6 @@ class ExperienceSection extends React.Component {
         // key="asdfjj"
         // =""  hmm
       >
-        <br />
-
         <FormInput
           aName="position"
           handleChange={handleChange9}
@@ -103,6 +101,7 @@ class ExperienceSection extends React.Component {
         >
           Delete This Experience Section
         </button>
+        <br />
       </div>
     );
   }

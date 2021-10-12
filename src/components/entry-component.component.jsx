@@ -1,5 +1,5 @@
 import React from 'react';
-import './entry-component.styles.scss';
+import '../styles/entry-component.styles.scss';
 import PersonalInfo from './personal-info.component';
 import ExperienceInfo from './experience-info.component';
 

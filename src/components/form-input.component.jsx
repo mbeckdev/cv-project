@@ -1,5 +1,5 @@
 import React from 'react';
-import './form-input.styles.scss';
+import '../styles/form-input.styles.scss';
 
 const FormInput = ({ handleChange, aName, label, value, type }) => {
   // console.log('made forminput,', aName, ' ', label, ' ', value);

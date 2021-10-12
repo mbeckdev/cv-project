@@ -1,5 +1,5 @@
 import React from 'react';
-import './preview.styles.scss';
+import '../styles/preview.styles.scss';
 
 const Preview = (props) => {
   // console.log('dem thestate= ', otherProps);

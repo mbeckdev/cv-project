@@ -1,5 +1,5 @@
 import React from 'react';
-import './component1.styles.scss';
+import '../styles/component1.styles.scss';
 
 const Component1 = () => {
   console.log('lol');
