@@ -4,6 +4,19 @@
   color: black;
   margin-top: 2rem;
   box-shadow: 1px 1px 10px black;
+  position: relative;
+
+  #preview-edit-button {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    width: 10rem;
+    // height: 300px;
+    background-color: rgb(132, 215, 248);
+    border-radius: 10px;
+    font-size: larger;
+    box-shadow: 1px 1px 10px black;
+  }
 
   .personal-section {
     .name-in-title {

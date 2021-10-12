@@ -53,6 +53,7 @@ class Main extends React.Component {
           id: uniqid(),
         },
       ],
+      editButtonIsHidden: false,
     };
   }
 
@@ -238,8 +239,15 @@ class Main extends React.Component {
     console.log('e.target', e.target);
   };
 
-  setExperience = (e) => {
-    this.setState({ experience: e });
+  handleEditButtonClick = (e) => {
+    e.preventDefault();
+    console.log('handleEditButtonClick');
+    if (!this.state.editButtonIsHidden) {
+      this.setState({ editButtonIsHidden: true }, () => {
+        console.log('eek');
+        console.log('aa');
+      });
+    }
   };
 
   render() {
@@ -252,9 +260,11 @@ class Main extends React.Component {
           handleDeleteExperienceClick={(e, thisExperience) =>
             this.handleDeleteExperienceClick(e, thisExperience)
           }
-          setExp={this.setExperience}
         />
-        <Preview theState={this.state} />
+        <Preview
+          theState={this.state}
+          handleEditButtonClick={this.handleEditButtonClick}
+        />
       </div>
     );
   }

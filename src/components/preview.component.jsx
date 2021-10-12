@@ -17,9 +17,17 @@ const Preview = (props) => {
   // let from = props.theState.experiences[0].from;
   // let to = props.theState.experiences[0].to;
   console.log('preview see props === ', props);
+  let extraHiddenClass = props.theState.editButtonIsHidden ? 'hidden' : '';
 
   return (
     <div className="preview">
+      <button
+        id="preview-edit-button"
+        className={`${extraHiddenClass}`}
+        onClick={props.handleEditButtonClick}
+      >
+        Edit
+      </button>
       <div className="personal-section">
         <div className="name-in-title">{name}</div>
 
