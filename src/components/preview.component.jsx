@@ -45,7 +45,7 @@ const Preview = (props) => {
           <hr />
 
           {props.theState.experiences.map((experience) => (
-            <div>
+            <div key={experience.id}>
               {/* <div>position={experience.position}</div> */}
               <PreviewExperienceSection experience={experience} />
             </div>
