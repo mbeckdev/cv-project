@@ -194,9 +194,28 @@ class Main extends React.Component {
     // console.log(e.target.aname);
   };
 
-  handleAddClick = (e) => {
+  handleAddExperienceClick = (e) => {
     e.preventDefault();
-    console.log('handle Add Click inside of main');
+    console.log('handle Add Experience Click inside of main');
+
+    let emptyExperience = {
+      position: 'durrrrr',
+      'main-tasks': '',
+      company: '',
+      city: '',
+      from: '',
+      to: '',
+      id: uniqid(),
+    };
+
+    console.log('eek, this.state in main = ', this.state);
+    let newExperiences = this.state.experiences;
+    newExperiences.push(emptyExperience);
+    console.log('heh newExperiences = ', newExperiences);
+
+    this.setState({ experiences: newExperiences }, () =>
+      console.log('after setting expereinces, this.state = ', this.state)
+    );
   };
 
   setExperience = (e) => {
@@ -209,7 +228,7 @@ class Main extends React.Component {
         <EntryComponent
           theState={this.state}
           handleChange3={this.handleChange3}
-          handleAddClick={this.handleAddClick}
+          handleAddExperienceClick={this.handleAddExperienceClick}
           setExp={this.setExperience}
         />
         <Preview theState={this.state} />

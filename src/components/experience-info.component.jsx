@@ -27,10 +27,10 @@ class ExperienceInfo extends React.Component {
           />
         ))}
 
-        <p>old experience section starts here</p>
-
         <div className="button-container">
-          <button onClick={this.props.handleAddClick}>Add New Section</button>
+          <button onClick={this.props.handleAddExperienceClick}>
+            Add New Experience Section
+          </button>
         </div>
       </form>
     );

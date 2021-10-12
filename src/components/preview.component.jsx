@@ -68,6 +68,7 @@ function PreviewExperienceSection(props) {
   let to = props.experience.to;
 
   let theseStyles = { margin: '10px 0' };
+
   return (
     <div className="preview-experience-section" style={theseStyles}>
       <div className="experience-section">
