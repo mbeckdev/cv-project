@@ -16,6 +16,7 @@ const Preview = (props) => {
   let city = props.theState.experiences[0].city;
   let from = props.theState.experiences[0].from;
   let to = props.theState.experiences[0].to;
+  console.log('preview see props === ', props);
 
   return (
     <div className="preview">
@@ -42,22 +43,13 @@ const Preview = (props) => {
         <div className="section">
           <h2>Experience</h2>
           <hr />
-          <div className="experience-section">
-            <div className="company-and-dates">
-              <p>
-                {company}, {city}
-              </p>
 
-              <p>
-                {from} - {to}
-              </p>
+          {props.theState.experiences.map((experience) => (
+            <div>
+              {/* <div>position={experience.position}</div> */}
+              <PreviewExperienceSection experience={experience} />
             </div>
-            <div className="position-and-tasks">
-              <p>{position}</p>
-
-              <p>{mainTasks}</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
@@ -82,3 +74,47 @@ const Preview = (props) => {
 // }
 
 export default Preview;
+
+// import React from 'react';
+
+function PreviewExperienceSection(
+  props
+  // {
+  // experience: { position, company, city, from, to, mainTasks as 'main-tasks' },
+
+  // }
+) {
+  let position = props.experience.position;
+  // let position = props.theState.experiences[0].position;
+  let mainTasks = props.experience['main-tasks'];
+  let company = props.experience.company;
+  let city = props.experience.city;
+  let from = props.experience.from;
+  let to = props.experience.to;
+  // console.log('previewexperienceSection.props = ', props);
+  // console.log('previewexperienceSection.props = ', { position });
+  let theseStyles = { margin: '10px 0' };
+  return (
+    <div className="preview-experience-section" style={theseStyles}>
+      <div className="experience-section">
+        <div className="company-and-dates">
+          <p>
+            {company}, {city}
+          </p>
+
+          <p>
+            {from} - {to}
+          </p>
+        </div>
+        <div className="position-and-tasks">
+          <p>{position}</p>
+          <p>mainTasks: {mainTasks}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// export { PreviewExperienceSection };
+
+// export default PreviewExperienceSection

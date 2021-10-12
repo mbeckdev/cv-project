@@ -43,6 +43,15 @@ class Main extends React.Component {
           to: 'Jan 01',
           id: uniqid(),
         },
+        {
+          position: 'Fry Cook3',
+          'main-tasks': 'Cooking fries2',
+          company: 'McBurger King2',
+          city: 'Denver2',
+          from: 'Jan 00',
+          to: 'Jan 01',
+          id: uniqid(),
+        },
       ],
     };
   }
