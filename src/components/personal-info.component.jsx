@@ -52,7 +52,7 @@ class PersonalInfo extends React.Component {
           // handleChange={this.handleChange}
           label="Name"
           type="text"
-          // value={this.props.name}
+          value={this.props.name}
           // aotherCssClasses="email"
           required
         />
@@ -63,7 +63,7 @@ class PersonalInfo extends React.Component {
           // handleChange={this.handleChange}
           label="Title"
           type="text"
-          // value={this.props.title}
+          value={this.props.title}
           // aotherCssClasses="email"
           required
         />
@@ -73,7 +73,7 @@ class PersonalInfo extends React.Component {
           // handleChange={this.handleChange}
           label="Email"
           type="email"
-          // value={this.props.email}
+          value={this.props.email}
           // aotherCssClasses="email"
           required
         />
@@ -83,7 +83,7 @@ class PersonalInfo extends React.Component {
           // handleChange={this.handleChange}
           label="Phone Number"
           type="tel"
-          // value={this.props.phoneNumber}
+          value={this.props.phoneNumber}
           // aotherCssClasses="email"
           required
         />
@@ -94,7 +94,7 @@ class PersonalInfo extends React.Component {
           // handleChange={this.handleChange}
           label="Description"
           type="text"
-          // value={this.props.description}
+          value={this.props.description}
           // aotherCssClasses="email"
           required
         />

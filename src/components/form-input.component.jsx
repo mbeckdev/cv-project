@@ -11,6 +11,7 @@ const FormInput = ({ handleChange, aName, label, value, type }) => {
         onChange={handleChange}
         name={aName}
         type={type}
+        value={value}
       />
       <label className="form-input-label shrink">{label}</label>
     </div>
