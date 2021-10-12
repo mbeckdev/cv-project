@@ -8,19 +8,20 @@ class ExperienceInfo extends React.Component {
     super(props);
 
     // this.state = this.props.experience;
-    this.state = {
-      experiences: [
-        {
-          position: '',
-          'main-tasks': '',
-          company: '',
-          city: '',
-          from: '',
-          to: '',
-          key: '',
-        },
-      ],
-    };
+
+    // this.state = {
+    //   experiences: [
+    //     {
+    //       position: '',
+    //       'main-tasks': '',
+    //       company: '',
+    //       city: '',
+    //       from: '',
+    //       to: '',
+    //       key: '',
+    //     },
+    //   ],
+    // };
   }
 
   // handleAddClick = (e) => {
@@ -35,7 +36,16 @@ class ExperienceInfo extends React.Component {
 
   render() {
     const handleChange2 = this.props.handleChange2;
-    console.log('grrrrrrrrrrrrrr', this.props.experiences);
+    console.log('this.props from experience-info before return', this.props);
+    console.log(
+      'this.props.experiences from experience-info before return',
+      this.props.experiences
+    );
+
+    this.props.experiences.map((experience) =>
+      console.log('www', experience.position)
+    );
+
     return (
       <form className="experience-info">
         <label className="experience-info-label">Experience Info</label>
@@ -43,6 +53,7 @@ class ExperienceInfo extends React.Component {
           <ExperienceSection
             handleChange9={handleChange2}
             key={experience.id}
+            theExperience={experience}
           />
         ))}
         {/* <ExperienceSection handleChange9={handleChange2} /> */}

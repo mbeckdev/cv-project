@@ -1,5 +1,6 @@
 import React from 'react';
 import './main.styles.scss';
+import uniqid from 'uniqid';
 
 import Preview from './preview.component';
 import EntryComponent from './entry-component.component';
@@ -31,7 +32,7 @@ class Main extends React.Component {
           city: 'Denver',
           from: 'Jan 99',
           to: 'Jan 00',
-          id: '0',
+          id: uniqid(),
         },
         {
           position: 'Fry Cook2',
@@ -40,7 +41,7 @@ class Main extends React.Component {
           city: 'Denver2',
           from: 'Jan 00',
           to: 'Jan 01',
-          id: '1',
+          id: uniqid(),
         },
       ],
     };
@@ -72,7 +73,62 @@ class Main extends React.Component {
     } else if (
       e.target.parentNode.parentNode.parentNode.className === 'experience-info'
     ) {
+      console.log('parent ... parent is "experience-info"');
+      console.log('this.state now in main is', this.state);
+      console.log('e.target', e.target);
+      console.log('e.target.value', e.target.value);
+      //e.target.name  = position   ex.
+      console.log('e.target.parentNode', e.target.parentNode); //form input container
+      console.log(
+        'e.target.parentNode.parentNode',
+        e.target.parentNode.parentNode
+      ); //<div id='ksdjfosjdf' class='experience-section'
+
       section = 'experiences';
+      let labelName = e.target.name;
+
+      //// which experience are we in????????????
+      let thisExperienceId = e.target.parentNode.parentNode.id;
+      console.log('thisExperienceId = ', thisExperienceId);
+      let thisIndex = this.state.experiences.findIndex(
+        (item) => item.id === thisExperienceId
+      );
+
+      console.log('thisEXPERIENCE = ', this.state.experiences[thisIndex]);
+      console.log('this index = ', thisIndex);
+
+      let newExperiences = this.state.experiences;
+      newExperiences[thisIndex][labelName] = e.target.value;
+      // newExperiences[thisIndex].position = 'durrr';
+      this.setState({ experiences: newExperiences });
+      //  this.setState((prevState)=>({[section]:...prevState[section],{}}));
+
+      // experiences: [
+      //   {
+      //     position: 'Fry Cook',
+      //     'main-tasks': 'Cooking fries',
+      //     company: 'McBurger King',
+      //     city: 'Denver',
+      //     from: 'Jan 99',
+      //     to: 'Jan 00',
+      //     id: uniqid(),
+      //   },
+      //   {
+      //     position: 'Fry Cook2',
+      //     'main-tasks': 'Cooking fries2',
+      //     company: 'McBurger King2',
+      //     city: 'Denver2',
+      //     from: 'Jan 00',
+      //     to: 'Jan 01',
+      //     id: uniqid(),
+      //   },
+      // ],
+
+      //
+      //
+      //
+      //
+
       // this.setState(
       //   (prevState, props) => ({
       //     // [section]: { [whichStateProp]: e.target.value },

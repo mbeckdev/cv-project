@@ -1,5 +1,6 @@
 import React from 'react';
 import FormInput from './form-input.component';
+// import uniqid from 'uniqid';
 
 class ExperienceSection extends React.Component {
   constructor(props) {
@@ -15,7 +16,8 @@ class ExperienceSection extends React.Component {
       key: '',
     };
 
-    console.log('this.state', this.state);
+    console.log('this.state in (1)experience constructor', this.state);
+    console.log('this.props in (1)experience constructor', this.props);
   }
 
   render() {
@@ -24,17 +26,28 @@ class ExperienceSection extends React.Component {
     console.log('this.state2', this.state);
 
     const handleChange9 = this.props.handleChange9;
+    console.log('this.props in experience-section before render', this.props);
+    console.log(
+      'this.props.theExperience.id in experience-section before render',
+      this.props.theExperience.id
+    );
 
     return (
-      <div className="experience-section" key={this.props.key}>
-        <p>experience section here</p>
+      <div
+        id={this.props.theExperience.id}
+        className="experience-section"
+        key={this.props.theExperience.id}
+        // key="asdfjj"
+        // =""  hmm
+      >
+        <p id="asdf">experience section here</p>
 
         <FormInput
           aName="position"
           handleChange={handleChange9}
           label="Position"
           type="text"
-          // value={this.props.position}
+          value={this.props.theExperience.position}
           // aotherCssClasses="email"
           required
         />
@@ -43,7 +56,7 @@ class ExperienceSection extends React.Component {
           handleChange={handleChange9}
           label="Main Tasks"
           type="textarea"
-          // value={this.props['main - task']}
+          value={this.props.theExperience['main-tasks']}
           // aotherCssClasses="email"
           required
         />
@@ -52,7 +65,7 @@ class ExperienceSection extends React.Component {
           handleChange={handleChange9}
           label="Company"
           type="text"
-          // value={this.props.company}
+          value={this.props.theExperience.company}
           // aotherCssClasses="email"
           required
         />
@@ -61,7 +74,7 @@ class ExperienceSection extends React.Component {
           handleChange={handleChange9}
           label="City"
           type="text"
-          // value={this.props.city}
+          value={this.props.theExperience.city}
           // aotherCssClasses="email"
           required
         />
@@ -69,8 +82,8 @@ class ExperienceSection extends React.Component {
           aName="from"
           handleChange={handleChange9}
           label="From"
-          type="date"
-          // value={this.props.from}
+          type="text"
+          value={this.props.theExperience.from}
           // aotherCssClasses="email"
           required
         />
@@ -78,8 +91,8 @@ class ExperienceSection extends React.Component {
           aName="to"
           handleChange={handleChange9}
           label="To"
-          type="date"
-          // value={this.props.to}
+          type="text"
+          value={this.props.theExperience.to}
           // aotherCssClasses="email"
           required
         />

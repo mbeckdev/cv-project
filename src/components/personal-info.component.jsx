@@ -6,13 +6,13 @@ class PersonalInfo extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      name: '',
-      title: '',
-      email: '',
-      phoneNumber: '',
-      description: '',
-    };
+    // this.state = {
+    //   name: '',
+    //   title: '',
+    //   email: '',
+    //   phoneNumber: '',
+    //   description: '',
+    // };
   }
 
   // handleChange = (e) => {

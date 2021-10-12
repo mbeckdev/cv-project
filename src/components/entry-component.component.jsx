@@ -7,37 +7,37 @@ class EntryComponent extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      personal: {
-        name: '',
-        title: '',
-        email: '',
-        phoneNumber: '',
-        description: '',
-      },
-      experiences: [
-        {
-          position: '',
-          'main-tasks': '',
-          company: '',
-          city: '',
-          from: '',
-          to: '',
-          key: '',
-        },
-        {
-          position: '',
-          'main-tasks': '',
-          company: '',
-          city: '',
-          from: '',
-          to: '',
-          key: '',
-        },
-      ],
-    };
+    // this.state = {
+    //   personal: {
+    //     name: '',
+    //     title: '',
+    //     email: '',
+    //     phoneNumber: '',
+    //     description: '',
+    //   },
+    //   experiences: [
+    //     {
+    //       position: '',
+    //       'main-tasks': '',
+    //       company: '',
+    //       city: '',
+    //       from: '',
+    //       to: '',
+    //       key: '',
+    //     },
+    //     {
+    //       position: '',
+    //       'main-tasks': '',
+    //       company: '',
+    //       city: '',
+    //       from: '',
+    //       to: '',
+    //       key: '',
+    //     },
+    //   ],
+    // };
 
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   // handleChange2 = (e) => {
@@ -85,16 +85,19 @@ class EntryComponent extends React.Component {
   // };
 
   render() {
+    console.log('this.props from entry-component before return', this.props);
     let handleChange3 = this.props.handleChange3;
     return (
       <div className="entry-component">
         <PersonalInfo
-          personal={this.state.personal}
+          personal={this.props.theState.personal}
+          // personal={this.state.personal}
           handleChange2={handleChange3}
         />
 
         <ExperienceInfo
-          experiences={this.state.experiences}
+          experiences={this.props.theState.experiences}
+          // experiences={this.state.experiences}
           handleChange2={handleChange3}
           handleAddClick={this.props.handleAddClick}
         />
