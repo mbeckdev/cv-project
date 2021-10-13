@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/entry-component.styles.scss';
-import PersonalInfo from './personal-info.component';
-import ExperienceInfo from './experience-info.component';
-import EducationInfo from './education-info.component';
+import PersonalInfo from './Personal-info.component';
+import ExperienceInfo from './Experience-info.component';
+import EducationInfo from './Education-info.component';
 
 class EntryComponent extends React.Component {
   render() {

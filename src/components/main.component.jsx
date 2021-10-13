@@ -2,8 +2,8 @@ import React from 'react';
 import '../styles/main.styles.scss';
 import uniqid from 'uniqid';
 
-import Preview from './preview.component';
-import EntryComponent from './entry-component.component';
+import Preview from './Preview.component';
+import EntryComponent from './Entry-component.component';
 
 class Main extends React.Component {
   constructor(props) {

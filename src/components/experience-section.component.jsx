@@ -1,5 +1,5 @@
 import React from 'react';
-import FormInput from './form-input.component';
+import FormInput from './Form-input.component';
 // import uniqid from 'uniqid';
 
 class ExperienceSection extends React.Component {

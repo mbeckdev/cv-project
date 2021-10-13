@@ -1,7 +1,7 @@
 import './App.css';
-import Header from './components/header.component';
-import Main from './components/main.component';
-import Footer from './components/footer.component';
+import Header from './components/Header.component';
+import Main from './components/Main.component';
+import Footer from './components/Footer.component';
 
 import COLORS from './colors';
 
