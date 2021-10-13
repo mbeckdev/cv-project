@@ -5,12 +5,6 @@ import uniqid from 'uniqid';
 import Preview from './preview.component';
 import EntryComponent from './entry-component.component';
 
-// const Main = () => {
-//   return (
-
-//   );
-// };
-
 class Main extends React.Component {
   constructor(props) {
     super(props);
@@ -73,35 +67,18 @@ class Main extends React.Component {
     };
   }
 
+  // When you type in a field
   handleChange3 = (e) => {
-    // console.log('this.state (entry) = ', this.state);
-
     let whichStateProp = e.target.name; // like title or email
-    // console.log('whichStateProp', whichStateProp);
-    // console.log('e.target.value', e.target.value);
 
     let section = '';
 
     console.log('**********************************');
-    // console.log(
-    //   'e.target.parentNode.parentNode.className',
-    //   e.target.parentNode.parentNode.className
-    // );
-    // console.log(
-    //   'e.target.parentNode.parentNode.parentNode.className',
-    //   e.target.parentNode.parentNode.parentNode.className
-    // );
-    // console.log(
-    //   'e.target.parentNode.parentNode',
-    //   e.target.parentNode.parentNode
-    // );
 
     if (e.target.parentNode.parentNode.className === 'personal-info') {
       section = 'personal';
       this.setState(
         (prevState, props) => ({
-          // [section]: { [whichStateProp]: e.target.value },
-
           [section]: {
             ...prevState[section],
             [whichStateProp]: e.target.value,
@@ -118,49 +95,20 @@ class Main extends React.Component {
 
       section = 'educations';
       let labelName = e.target.name;
-      // console.log('labelName = ', e.target.name);
 
-      //// which experience are we in????????????
-      // console.log('educations e.target.parentNode', e.target.parentNode);
-      // console.log(
-      //   'educations e.target.parentNode.parentNode',
-      //   e.target.parentNode.parentNode
-      // ); //'education-section'
-      // console.log(
-      //   'educations e.target.parentNode.parentNode.parentNode',
-      //   e.target.parentNode.parentNode.parentNode
-      // ); //'education-info'
+      //// which experience/education item are we in?
       let educationSectionNode = e.target.parentNode.parentNode;
       let thisEducationId = educationSectionNode.id;
-      // let thisEducationId = e.target.parentNode.parentNode.id;
-      // console.log('thisEducationId = ', thisEducationId);
       let thisIndex = this.state.educations.findIndex(
         (item) => item.id === thisEducationId
       );
 
-      // console.log('this education index = ', thisIndex);
-      // console.log('this.state right now = ', this.state);
-      // console.log('thisEDUCATION = ', this.state.educations[thisIndex]);
-      // console.log('this index = ', thisIndex);
-
       let newEducations = this.state.educations;
       newEducations[thisIndex][labelName] = e.target.value;
-      // newExperiences[thisIndex].position = 'durrr';
       this.setState({ educations: newEducations });
     } else if (
       e.target.parentNode.parentNode.parentNode.className === 'experience-info'
     ) {
-      // console.log('parent ... parent is "experience-info"');
-      // console.log('this.state now in main is', this.state);
-      // console.log('e.target', e.target);
-      // console.log('e.target.value', e.target.value);
-      // //e.target.name  = position   ex.
-      // console.log('e.target.parentNode', e.target.parentNode); //form input container
-      // console.log(
-      //   'e.target.parentNode.parentNode',
-      //   e.target.parentNode.parentNode
-      // ); //<div id='ksdjfosjdf' class='experience-section'
-
       section = 'experiences';
       let labelName = e.target.name;
 
@@ -176,9 +124,7 @@ class Main extends React.Component {
 
       let newExperiences = this.state.experiences;
       newExperiences[thisIndex][labelName] = e.target.value;
-      // newExperiences[thisIndex].position = 'durrr';
       this.setState({ experiences: newExperiences });
-      //  this.setState((prevState)=>({[section]:...prevState[section],{}}));
     }
 
     console.log(
@@ -193,7 +139,7 @@ class Main extends React.Component {
     console.log('e.target.value', e.target.value);
   };
 
-  handleAddExperienceClick = (e) => {
+  handleAddSectionClick = (e, educationOrExperience) => {
     e.preventDefault();
     console.log('handle Add Experience Click inside of main');
 
@@ -207,32 +153,39 @@ class Main extends React.Component {
       id: uniqid(),
     };
 
-    console.log('eek, this.state in main = ', this.state);
-    let newExperiences = this.state.experiences;
-    newExperiences.push(emptyExperience);
-    console.log('heh newExperiences = ', newExperiences);
+    let emptyEducation = {
+      school: '',
+      degree: '',
+      from: '',
+      to: '',
+      id: uniqid(),
+    };
 
-    this.setState({ experiences: newExperiences }, () =>
-      console.log('after setting expereinces, this.state = ', this.state)
+    let emptySectionToAdd = {};
+    let sectionToSet = '';
+    if (educationOrExperience === 'education') {
+      emptySectionToAdd = emptyEducation;
+      console.log('--emptySEctionToAdd', emptySectionToAdd);
+      sectionToSet = 'educations';
+    } else if (educationOrExperience === 'experience') {
+      emptySectionToAdd = emptyExperience;
+      console.log('--emptySEctionToAdd', emptySectionToAdd);
+      sectionToSet = 'experiences';
+    } else {
+      console.error(
+        '"education" or "experience" not properly used in handleAddExperienceClick'
+      );
+    }
+
+    let newSections = this.state[sectionToSet];
+
+    newSections.push(emptySectionToAdd);
+    console.log('heh newSections = ', newSections);
+
+    this.setState({ [sectionToSet]: newSections }, () =>
+      console.log('after setting sections, this.state = ', this.state)
     );
   };
-
-  // handleDeleteExperienceClick = (e, thisExperience) => {
-  //   e.preventDefault();
-
-  //   // find the index of it
-  //   let thisIndex = this.state.experiences.findIndex(
-  //     (item) => item.id === thisExperience.id
-  //   );
-
-  //   let newExperiences = this.state.experiences;
-  //   // newExperiences[thisIndex]
-  //   newExperiences.splice(thisIndex, 1);
-
-  //   this.setState({ experiences: newExperiences });
-
-  //   console.log('e.target', e.target);
-  // };
 
   handleDeleteSectionClick = (
     e,
@@ -281,7 +234,7 @@ class Main extends React.Component {
         <EntryComponent
           theState={this.state}
           handleChange3={this.handleChange3}
-          handleAddExperienceClick={this.handleAddExperienceClick}
+          handleAddSectionClick={this.handleAddSectionClick}
           handleCloseEditClick={this.handleCloseEditClick}
           handleDeleteSectionClick={this.handleDeleteSectionClick}
         />

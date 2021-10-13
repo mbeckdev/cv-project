@@ -29,7 +29,8 @@ class EntryComponent extends React.Component {
         <ExperienceInfo
           experiences={this.props.theState.experiences}
           handleChange2={handleChange3}
-          handleAddExperienceClick={this.props.handleAddExperienceClick}
+          handleAddSectionClick={this.props.handleAddSectionClick}
+          // handleAddExperienceClick={this.props.handleAddExperienceClick}
           handleDeleteSectionClick={this.props.handleDeleteSectionClick}
 
           // handleDeleteExperienceClick={(e, thisExperience) =>
@@ -42,6 +43,7 @@ class EntryComponent extends React.Component {
           handleChange2={handleChange3}
           handleDeleteSectionClick={this.props.handleDeleteSectionClick}
           // handleDeleteEducationClick={this.props.handleDeleteEducationClick}
+          handleAddSectionClick={this.props.handleAddSectionClick}
         />
       </div>
     );

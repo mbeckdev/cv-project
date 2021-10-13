@@ -14,9 +14,16 @@ function EducationInfo(props) {
           key={education.id}
           theEducation={education}
           handleDeleteSectionClick={props.handleDeleteSectionClick}
-          // handleDeleteEducationClick={props.handleDeleteEducationClick}
         />
       ))}
+
+      <button
+        onClick={(e) => {
+          props.handleAddSectionClick(e, 'education');
+        }}
+      >
+        Add New Education Section
+      </button>
     </form>
   );
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-// import FormInput from './form-input.component';
 import '../styles/experience-info.styles.scss';
 import ExperienceSection from './experience-section.component';
 
@@ -29,7 +28,11 @@ class ExperienceInfo extends React.Component {
         ))}
 
         <div className="button-container">
-          <button onClick={this.props.handleAddExperienceClick}>
+          <button
+            onClick={(e) => {
+              this.props.handleAddSectionClick(e, 'experience');
+            }}
+          >
             Add New Experience Section
           </button>
         </div>
