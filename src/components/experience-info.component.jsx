@@ -22,9 +22,7 @@ class ExperienceInfo extends React.Component {
         {this.props.experiences.map((experience) => (
           <ExperienceSection
             handleChange9={handleChange2}
-            handleDeleteExperienceClick={(e, thisExperience) =>
-              this.props.handleDeleteExperienceClick(e, thisExperience)
-            }
+            handleDeleteSectionClick={this.props.handleDeleteSectionClick}
             key={experience.id}
             theExperience={experience}
           />

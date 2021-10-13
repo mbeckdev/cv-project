@@ -95,8 +95,12 @@ class ExperienceSection extends React.Component {
           required
         />
         <button
-          onClick={(e, thisExperience) =>
-            this.props.handleDeleteExperienceClick(e, this.props.theExperience)
+          onClick={(e) =>
+            this.props.handleDeleteSectionClick(
+              e,
+              this.props.theExperience,
+              'experience'
+            )
           }
         >
           Delete This Experience Section

@@ -217,24 +217,43 @@ class Main extends React.Component {
     );
   };
 
-  handleDeleteExperienceClick = (e, thisExperience) => {
+  // handleDeleteExperienceClick = (e, thisExperience) => {
+  //   e.preventDefault();
+
+  //   // find the index of it
+  //   let thisIndex = this.state.experiences.findIndex(
+  //     (item) => item.id === thisExperience.id
+  //   );
+
+  //   let newExperiences = this.state.experiences;
+  //   // newExperiences[thisIndex]
+  //   newExperiences.splice(thisIndex, 1);
+
+  //   this.setState({ experiences: newExperiences });
+
+  //   console.log('e.target', e.target);
+  // };
+
+  handleDeleteSectionClick = (
+    e,
+    thisEducationOrThisExperience,
+    educationOrExperience
+  ) => {
     e.preventDefault();
-    // console.log('handleDeleteExperienceClick');
-    // console.log(e.target);
-    // console.log('thisExperience = ', thisExperience);
 
-    // find the index of it
-    let thisIndex = this.state.experiences.findIndex(
-      (item) => item.id === thisExperience.id
+    let sectionToSet = '';
+    if (educationOrExperience === 'education') {
+      sectionToSet = 'educations';
+    } else if (educationOrExperience === 'experience') {
+      sectionToSet = 'experiences';
+    }
+
+    let thisIndex = this.state[sectionToSet].findIndex(
+      (item) => item.id === thisEducationOrThisExperience.id
     );
-
-    let newExperiences = this.state.experiences;
-    // newExperiences[thisIndex]
-    newExperiences.splice(thisIndex, 1);
-
-    this.setState({ experiences: newExperiences });
-
-    console.log('e.target', e.target);
+    let newSections = this.state[sectionToSet];
+    newSections.splice(thisIndex, 1);
+    this.setState({ [sectionToSet]: newSections });
   };
 
   handleEditButtonClick = (e) => {
@@ -263,10 +282,8 @@ class Main extends React.Component {
           theState={this.state}
           handleChange3={this.handleChange3}
           handleAddExperienceClick={this.handleAddExperienceClick}
-          handleDeleteExperienceClick={(e, thisExperience) =>
-            this.handleDeleteExperienceClick(e, thisExperience)
-          }
           handleCloseEditClick={this.handleCloseEditClick}
+          handleDeleteSectionClick={this.handleDeleteSectionClick}
         />
         <Preview
           theState={this.state}

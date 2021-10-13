@@ -13,6 +13,8 @@ function EducationInfo(props) {
           id={education.id}
           key={education.id}
           theEducation={education}
+          handleDeleteSectionClick={props.handleDeleteSectionClick}
+          // handleDeleteEducationClick={props.handleDeleteEducationClick}
         />
       ))}
     </form>
@@ -63,6 +65,18 @@ class EducationSection extends React.Component {
           value={this.props.theEducation.to}
           required
         />
+
+        <button
+          onClick={(e) =>
+            this.props.handleDeleteSectionClick(
+              e,
+              this.props.theEducation,
+              'education'
+            )
+          }
+        >
+          Delete This Experience Section
+        </button>
       </div>
     );
   }
