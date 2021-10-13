@@ -59,6 +59,18 @@ const Preview = (props) => {
             </div>
           ))}
         </div>
+
+        <div className="section">
+          <h2>Education</h2>
+          <hr />
+
+          {props.theState.educations.map((education) => (
+            <div key={education.id}>
+              {/* <div>position={education.position}</div> */}
+              <PreviewEducationSection education={education} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -98,6 +110,23 @@ function PreviewExperienceSection(props) {
   );
 }
 
-// export { PreviewExperienceSection };
+function PreviewEducationSection({ education: { school, degree, from, to } }) {
+  let theseStyles = { margin: '10px 0' };
 
-// export default PreviewExperienceSection
+  return (
+    <div className="preview-education-section" style={theseStyles}>
+      <div className="education-section">
+        <div className="company-and-dates">
+          <p>
+            {school}, {degree}
+          </p>
+
+          <p>
+            {from} - {to}
+          </p>
+        </div>
+        <div className="position-and-tasks"></div>
+      </div>
+    </div>
+  );
+}
