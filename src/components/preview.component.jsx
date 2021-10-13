@@ -1,22 +1,15 @@
 import React from 'react';
 import '../styles/preview.styles.scss';
 
+import PreviewExperienceSection from './PreviewExperienceSection.component';
+import PreviewEducationSection from './PreviewEducationSection.component';
+
 const Preview = (props) => {
-  // console.log('dem thestate= ', otherProps);
-  // console.log('asdf');
-  // console.log(props);
   let name = props.theState.personal.name;
   let title = props.theState.personal.title;
   let email = props.theState.personal.email;
   let phoneNumber = props.theState.personal.phoneNumber;
   let description = props.theState.personal.description;
-  // let position = props.theState.experiences[0].position;
-  // let mainTasks = props.theState.experiences[0]['main-tasks'];
-  // let company = props.theState.experiences[0].company;
-  // let city = props.theState.experiences[0].city;
-  // let from = props.theState.experiences[0].from;
-  // let to = props.theState.experiences[0].to;
-  console.log('preview see props === ', props);
   let extraHiddenClass = props.theState.editButtonIsHidden ? 'hidden' : '';
 
   return (
@@ -54,7 +47,6 @@ const Preview = (props) => {
 
           {props.theState.experiences.map((experience) => (
             <div key={experience.id}>
-              {/* <div>position={experience.position}</div> */}
               <PreviewExperienceSection experience={experience} />
             </div>
           ))}
@@ -66,7 +58,6 @@ const Preview = (props) => {
 
           {props.theState.educations.map((education) => (
             <div key={education.id}>
-              {/* <div>position={education.position}</div> */}
               <PreviewEducationSection education={education} />
             </div>
           ))}
@@ -77,56 +68,3 @@ const Preview = (props) => {
 };
 
 export default Preview;
-
-function PreviewExperienceSection(props) {
-  let position = props.experience.position;
-  // let position = props.theState.experiences[0].position;
-  let mainTasks = props.experience['main-tasks'];
-  let company = props.experience.company;
-  let city = props.experience.city;
-  let from = props.experience.from;
-  let to = props.experience.to;
-
-  let theseStyles = { margin: '10px 0' };
-
-  return (
-    <div className="preview-experience-section" style={theseStyles}>
-      <div className="experience-section">
-        <div className="company-and-dates">
-          <p>
-            {company}, {city}
-          </p>
-
-          <p>
-            {from} - {to}
-          </p>
-        </div>
-        <div className="position-and-tasks">
-          <p>{position}</p>
-          <p>mainTasks: {mainTasks}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function PreviewEducationSection({ education: { school, degree, from, to } }) {
-  let theseStyles = { margin: '10px 0' };
-
-  return (
-    <div className="preview-education-section" style={theseStyles}>
-      <div className="education-section">
-        <div className="company-and-dates">
-          <p>
-            {school}, {degree}
-          </p>
-
-          <p>
-            {from} - {to}
-          </p>
-        </div>
-        <div className="position-and-tasks"></div>
-      </div>
-    </div>
-  );
-}
