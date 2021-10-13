@@ -13,6 +13,13 @@ class EntryComponent extends React.Component {
     return (
       // <div className={`entry-component`}>
       <div className={`entry-component ${hiddenClassName}`}>
+        <button
+          id="close-entry-component"
+          onClick={this.props.handleCloseEditClick}
+        >
+          X
+        </button>
+        {/* <h2>Enter Info</h2> */}
         <PersonalInfo
           personal={this.props.theState.personal}
           handleChange2={handleChange3}

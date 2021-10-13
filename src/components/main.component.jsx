@@ -250,6 +250,14 @@ class Main extends React.Component {
     }
   };
 
+  handleCloseEditClick = (e) => {
+    e.preventDefault();
+    console.log('editclose');
+    if (this.state.editButtonIsHidden) {
+      this.setState({ editButtonIsHidden: false });
+    }
+  };
+
   render() {
     return (
       <div className="main-component">
@@ -260,6 +268,7 @@ class Main extends React.Component {
           handleDeleteExperienceClick={(e, thisExperience) =>
             this.handleDeleteExperienceClick(e, thisExperience)
           }
+          handleCloseEditClick={this.handleCloseEditClick}
         />
         <Preview
           theState={this.state}
