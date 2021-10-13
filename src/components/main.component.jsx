@@ -53,6 +53,22 @@ class Main extends React.Component {
           id: uniqid(),
         },
       ],
+      educations: [
+        {
+          school: 'happy school',
+          degree: 'master chef',
+          from: 'May 67',
+          to: 'Jan 42',
+          id: uniqid(),
+        },
+        {
+          school: 'happy school2',
+          degree: 'master chef2',
+          from: 'May2 67',
+          to: 'Jan2 42',
+          id: uniqid(),
+        },
+      ],
       editButtonIsHidden: false,
     };
   }
@@ -65,6 +81,21 @@ class Main extends React.Component {
     // console.log('e.target.value', e.target.value);
 
     let section = '';
+
+    console.log('**********************************');
+    // console.log(
+    //   'e.target.parentNode.parentNode.className',
+    //   e.target.parentNode.parentNode.className
+    // );
+    // console.log(
+    //   'e.target.parentNode.parentNode.parentNode.className',
+    //   e.target.parentNode.parentNode.parentNode.className
+    // );
+    // console.log(
+    //   'e.target.parentNode.parentNode',
+    //   e.target.parentNode.parentNode
+    // );
+
     if (e.target.parentNode.parentNode.className === 'personal-info') {
       section = 'personal';
       this.setState(
@@ -81,18 +112,54 @@ class Main extends React.Component {
         }
       );
     } else if (
+      e.target.parentNode.parentNode.parentNode.className === 'education-info'
+    ) {
+      console.log('education info change');
+
+      section = 'educations';
+      let labelName = e.target.name;
+      // console.log('labelName = ', e.target.name);
+
+      //// which experience are we in????????????
+      // console.log('educations e.target.parentNode', e.target.parentNode);
+      // console.log(
+      //   'educations e.target.parentNode.parentNode',
+      //   e.target.parentNode.parentNode
+      // ); //'education-section'
+      // console.log(
+      //   'educations e.target.parentNode.parentNode.parentNode',
+      //   e.target.parentNode.parentNode.parentNode
+      // ); //'education-info'
+      let educationSectionNode = e.target.parentNode.parentNode;
+      let thisEducationId = educationSectionNode.id;
+      // let thisEducationId = e.target.parentNode.parentNode.id;
+      // console.log('thisEducationId = ', thisEducationId);
+      let thisIndex = this.state.educations.findIndex(
+        (item) => item.id === thisEducationId
+      );
+
+      // console.log('this education index = ', thisIndex);
+      // console.log('this.state right now = ', this.state);
+      // console.log('thisEDUCATION = ', this.state.educations[thisIndex]);
+      // console.log('this index = ', thisIndex);
+
+      let newEducations = this.state.educations;
+      newEducations[thisIndex][labelName] = e.target.value;
+      // newExperiences[thisIndex].position = 'durrr';
+      this.setState({ educations: newEducations });
+    } else if (
       e.target.parentNode.parentNode.parentNode.className === 'experience-info'
     ) {
-      console.log('parent ... parent is "experience-info"');
-      console.log('this.state now in main is', this.state);
-      console.log('e.target', e.target);
-      console.log('e.target.value', e.target.value);
-      //e.target.name  = position   ex.
-      console.log('e.target.parentNode', e.target.parentNode); //form input container
-      console.log(
-        'e.target.parentNode.parentNode',
-        e.target.parentNode.parentNode
-      ); //<div id='ksdjfosjdf' class='experience-section'
+      // console.log('parent ... parent is "experience-info"');
+      // console.log('this.state now in main is', this.state);
+      // console.log('e.target', e.target);
+      // console.log('e.target.value', e.target.value);
+      // //e.target.name  = position   ex.
+      // console.log('e.target.parentNode', e.target.parentNode); //form input container
+      // console.log(
+      //   'e.target.parentNode.parentNode',
+      //   e.target.parentNode.parentNode
+      // ); //<div id='ksdjfosjdf' class='experience-section'
 
       section = 'experiences';
       let labelName = e.target.name;
@@ -112,47 +179,8 @@ class Main extends React.Component {
       // newExperiences[thisIndex].position = 'durrr';
       this.setState({ experiences: newExperiences });
       //  this.setState((prevState)=>({[section]:...prevState[section],{}}));
-
-      // experiences: [
-      //   {
-      //     position: 'Fry Cook',
-      //     'main-tasks': 'Cooking fries',
-      //     company: 'McBurger King',
-      //     city: 'Denver',
-      //     from: 'Jan 99',
-      //     to: 'Jan 00',
-      //     id: uniqid(),
-      //   },
-      //   {
-      //     position: 'Fry Cook2',
-      //     'main-tasks': 'Cooking fries2',
-      //     company: 'McBurger King2',
-      //     city: 'Denver2',
-      //     from: 'Jan 00',
-      //     to: 'Jan 01',
-      //     id: uniqid(),
-      //   },
-      // ],
-
-      //
-      //
-      //
-      //
-
-      // this.setState(
-      //   (prevState, props) => ({
-      //     // [section]: { [whichStateProp]: e.target.value },
-
-      //     experiences[0]: {
-      //       ...prevState.experiences[0],
-      //       [whichStateProp]: e.target.value,
-      //     },
-      //   }),
-      //   () => {
-      //     console.log('after setState this.state (entry) =', this.state);
-      //   }
-      // );
     }
+
     console.log(
       'e.target.parentNode.parentNode.className',
       e.target.parentNode.parentNode.className
@@ -163,36 +191,6 @@ class Main extends React.Component {
     );
     console.log('section', section);
     console.log('e.target.value', e.target.value);
-
-    // section = 'personal';
-
-    // this.setState(
-    //   (prevState, props) => ({
-    //     // [section]: { [whichStateProp]: e.target.value },
-
-    //     [section]: {
-    //       ...prevState[section],
-    //       [whichStateProp]: e.target.value,
-    //     },
-    //   }),
-    //   () => {
-    //     console.log('after setState this.state (entry) =', this.state);
-    //   }
-    // );
-    // console.log(e.target);
-
-    // console.log(e.target.parentNode.parentNode.className);
-    // console.log(e.target.parentNode.parentNode.parentNode.className);
-    // console.log('yo mama - handle changed just happened!');
-
-    // console.log('hi');
-    // console.log(e);
-    //e.target.name = name property like title or email
-    // console.log(e.target.value);
-    // console.log(e.target.name);
-    // console.log(`e.target.type = ${e.target.type}`);
-    // console.log(e.target.aothercssclasses);
-    // console.log(e.target.aname);
   };
 
   handleAddExperienceClick = (e) => {

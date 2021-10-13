@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/entry-component.styles.scss';
 import PersonalInfo from './personal-info.component';
 import ExperienceInfo from './experience-info.component';
+import EducationInfo from './education-info.component';
 
 class EntryComponent extends React.Component {
   render() {
@@ -32,6 +33,11 @@ class EntryComponent extends React.Component {
           handleDeleteExperienceClick={(e, thisExperience) =>
             this.props.handleDeleteExperienceClick(e, thisExperience)
           }
+        />
+
+        <EducationInfo
+          educations={this.props.theState.educations}
+          handleChange2={handleChange3}
         />
       </div>
     );
