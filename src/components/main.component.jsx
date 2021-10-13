@@ -73,7 +73,7 @@ class Main extends React.Component {
 
     let section = '';
 
-    console.log('**********************************');
+    // console.log('**********************************');
 
     if (e.target.parentNode.parentNode.className === 'personal-info') {
       section = 'personal';
@@ -91,7 +91,7 @@ class Main extends React.Component {
     } else if (
       e.target.parentNode.parentNode.parentNode.className === 'education-info'
     ) {
-      console.log('education info change');
+      // console.log('education info change');
 
       section = 'educations';
       let labelName = e.target.name;
@@ -114,29 +114,29 @@ class Main extends React.Component {
 
       //// which experience are we in????????????
       let thisExperienceId = e.target.parentNode.parentNode.id;
-      console.log('thisExperienceId = ', thisExperienceId);
+      // console.log('thisExperienceId = ', thisExperienceId);
       let thisIndex = this.state.experiences.findIndex(
         (item) => item.id === thisExperienceId
       );
 
-      console.log('thisEXPERIENCE = ', this.state.experiences[thisIndex]);
-      console.log('this index = ', thisIndex);
+      // console.log('thisEXPERIENCE = ', this.state.experiences[thisIndex]);
+      // console.log('this index = ', thisIndex);
 
       let newExperiences = this.state.experiences;
       newExperiences[thisIndex][labelName] = e.target.value;
       this.setState({ experiences: newExperiences });
     }
 
-    console.log(
-      'e.target.parentNode.parentNode.className',
-      e.target.parentNode.parentNode.className
-    );
-    console.log(
-      'e.target.parentNode.parentNode.parentNode.className',
-      e.target.parentNode.parentNode.parentNode.className
-    );
-    console.log('section', section);
-    console.log('e.target.value', e.target.value);
+    // console.log(
+    //   'e.target.parentNode.parentNode.className',
+    //   e.target.parentNode.parentNode.className
+    // );
+    // console.log(
+    //   'e.target.parentNode.parentNode.parentNode.className',
+    //   e.target.parentNode.parentNode.parentNode.className
+    // );
+    // console.log('section', section);
+    // console.log('e.target.value', e.target.value);
   };
 
   handleAddSectionClick = (e, educationOrExperience) => {
@@ -180,11 +180,11 @@ class Main extends React.Component {
     let newSections = this.state[sectionToSet];
 
     newSections.push(emptySectionToAdd);
-    console.log('heh newSections = ', newSections);
+    //   console.log('heh newSections = ', newSections);
 
-    this.setState({ [sectionToSet]: newSections }, () =>
-      console.log('after setting sections, this.state = ', this.state)
-    );
+    //   this.setState({ [sectionToSet]: newSections }, () =>
+    //     console.log('after setting sections, this.state = ', this.state)
+    //   );
   };
 
   handleDeleteSectionClick = (

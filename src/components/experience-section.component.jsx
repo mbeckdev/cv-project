@@ -1,6 +1,5 @@
 import React from 'react';
 import FormInput from './Form-input.component';
-// import uniqid from 'uniqid';
 
 class ExperienceSection extends React.Component {
   constructor(props) {
@@ -21,8 +20,6 @@ class ExperienceSection extends React.Component {
   }
 
   render() {
-    // let something = this.state.something;
-    // console.log(something);
     console.log('this.state2', this.state);
 
     const handleChange9 = this.props.handleChange9;
@@ -37,8 +34,6 @@ class ExperienceSection extends React.Component {
         id={this.props.theExperience.id}
         className="experience-section"
         key={this.props.theExperience.id}
-        // key="asdfjj"
-        // =""  hmm
       >
         <FormInput
           aName="position"
@@ -46,7 +41,6 @@ class ExperienceSection extends React.Component {
           label="Position"
           type="text"
           value={this.props.theExperience.position}
-          // aotherCssClasses="email"
           required
         />
         <FormInput
@@ -55,7 +49,6 @@ class ExperienceSection extends React.Component {
           label="Main Tasks"
           type="textarea"
           value={this.props.theExperience['main-tasks']}
-          // aotherCssClasses="email"
           required
         />
         <FormInput
@@ -64,7 +57,6 @@ class ExperienceSection extends React.Component {
           label="Company"
           type="text"
           value={this.props.theExperience.company}
-          // aotherCssClasses="email"
           required
         />
         <FormInput
@@ -73,7 +65,6 @@ class ExperienceSection extends React.Component {
           label="City"
           type="text"
           value={this.props.theExperience.city}
-          // aotherCssClasses="email"
           required
         />
         <FormInput
@@ -82,7 +73,6 @@ class ExperienceSection extends React.Component {
           label="From"
           type="text"
           value={this.props.theExperience.from}
-          // aotherCssClasses="email"
           required
         />
         <FormInput
@@ -91,7 +81,6 @@ class ExperienceSection extends React.Component {
           label="To"
           type="text"
           value={this.props.theExperience.to}
-          // aotherCssClasses="email"
           required
         />
         <button

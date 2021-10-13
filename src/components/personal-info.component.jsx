@@ -1,6 +1,7 @@
 import React from 'react';
-import FormInput from './Form-input.component';
 import '../styles/personal-info.styles.scss';
+
+import FormInput from './Form-input.component';
 
 class PersonalInfo extends React.Component {
   render() {
@@ -8,7 +9,6 @@ class PersonalInfo extends React.Component {
     console.log('render personal-info, this.state= ', this.state, ' done');
     return (
       <form className="personal-info" name="sss">
-        {/* <FormInput type="text" handleChange={this.handleChange} name="aname" /> */}
         <label className="personal-info-label">Personal Info</label>
 
         <FormInput

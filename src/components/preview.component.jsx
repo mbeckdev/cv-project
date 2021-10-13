@@ -1,4 +1,5 @@
 import React from 'react';
+
 import '../styles/preview.styles.scss';
 
 import PreviewExperienceSection from './PreviewExperienceSection.component';

@@ -12,7 +12,6 @@ class EntryComponent extends React.Component {
       ? 'hidden'
       : '';
     return (
-      // <div className={`entry-component`}>
       <div className={`entry-component ${hiddenClassName}`}>
         <button
           id="close-entry-component"
@@ -20,7 +19,6 @@ class EntryComponent extends React.Component {
         >
           X
         </button>
-        {/* <h2>Enter Info</h2> */}
         <PersonalInfo
           personal={this.props.theState.personal}
           handleChange2={handleChange3}
@@ -30,19 +28,13 @@ class EntryComponent extends React.Component {
           experiences={this.props.theState.experiences}
           handleChange2={handleChange3}
           handleAddSectionClick={this.props.handleAddSectionClick}
-          // handleAddExperienceClick={this.props.handleAddExperienceClick}
           handleDeleteSectionClick={this.props.handleDeleteSectionClick}
-
-          // handleDeleteExperienceClick={(e, thisExperience) =>
-          //   this.props.handleDeleteExperienceClick(e, thisExperience)
-          // }
         />
 
         <EducationInfo
           educations={this.props.theState.educations}
           handleChange2={handleChange3}
           handleDeleteSectionClick={this.props.handleDeleteSectionClick}
-          // handleDeleteEducationClick={this.props.handleDeleteEducationClick}
           handleAddSectionClick={this.props.handleAddSectionClick}
         />
       </div>
