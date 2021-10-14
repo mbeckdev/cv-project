@@ -6,7 +6,6 @@ import EducationInfo from './Education-info.component';
 
 class EntryComponent extends React.Component {
   render() {
-    console.log('this.props from entry-component before return', this.props);
     let handleChange3 = this.props.handleChange3;
     let hiddenClassName = !this.props.theState.editButtonIsHidden
       ? 'hidden'

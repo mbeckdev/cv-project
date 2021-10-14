@@ -73,26 +73,17 @@ class Main extends React.Component {
 
     let section = '';
 
-    // console.log('**********************************');
-
     if (e.target.parentNode.parentNode.className === 'personal-info') {
       section = 'personal';
-      this.setState(
-        (prevState, props) => ({
-          [section]: {
-            ...prevState[section],
-            [whichStateProp]: e.target.value,
-          },
-        }),
-        () => {
-          console.log('after setState this.state (entry) =', this.state);
-        }
-      );
+      this.setState((prevState, props) => ({
+        [section]: {
+          ...prevState[section],
+          [whichStateProp]: e.target.value,
+        },
+      }));
     } else if (
       e.target.parentNode.parentNode.parentNode.className === 'education-info'
     ) {
-      // console.log('education info change');
-
       section = 'educations';
       let labelName = e.target.name;
 
@@ -114,34 +105,18 @@ class Main extends React.Component {
 
       //// which experience are we in????????????
       let thisExperienceId = e.target.parentNode.parentNode.id;
-      // console.log('thisExperienceId = ', thisExperienceId);
       let thisIndex = this.state.experiences.findIndex(
         (item) => item.id === thisExperienceId
       );
-
-      // console.log('thisEXPERIENCE = ', this.state.experiences[thisIndex]);
-      // console.log('this index = ', thisIndex);
 
       let newExperiences = this.state.experiences;
       newExperiences[thisIndex][labelName] = e.target.value;
       this.setState({ experiences: newExperiences });
     }
-
-    // console.log(
-    //   'e.target.parentNode.parentNode.className',
-    //   e.target.parentNode.parentNode.className
-    // );
-    // console.log(
-    //   'e.target.parentNode.parentNode.parentNode.className',
-    //   e.target.parentNode.parentNode.parentNode.className
-    // );
-    // console.log('section', section);
-    // console.log('e.target.value', e.target.value);
   };
 
   handleAddSectionClick = (e, educationOrExperience) => {
     e.preventDefault();
-    console.log('handle Add Experience Click inside of main');
 
     let emptyExperience = {
       position: 'durrrrr',
@@ -165,11 +140,9 @@ class Main extends React.Component {
     let sectionToSet = '';
     if (educationOrExperience === 'education') {
       emptySectionToAdd = emptyEducation;
-      console.log('--emptySEctionToAdd', emptySectionToAdd);
       sectionToSet = 'educations';
     } else if (educationOrExperience === 'experience') {
       emptySectionToAdd = emptyExperience;
-      console.log('--emptySEctionToAdd', emptySectionToAdd);
       sectionToSet = 'experiences';
     } else {
       console.error(
@@ -180,11 +153,8 @@ class Main extends React.Component {
     let newSections = this.state[sectionToSet];
 
     newSections.push(emptySectionToAdd);
-    //   console.log('heh newSections = ', newSections);
 
-    //   this.setState({ [sectionToSet]: newSections }, () =>
-    //     console.log('after setting sections, this.state = ', this.state)
-    //   );
+    this.setState({ [sectionToSet]: newSections });
   };
 
   handleDeleteSectionClick = (
@@ -211,18 +181,13 @@ class Main extends React.Component {
 
   handleEditButtonClick = (e) => {
     e.preventDefault();
-    console.log('handleEditButtonClick');
     if (!this.state.editButtonIsHidden) {
-      this.setState({ editButtonIsHidden: true }, () => {
-        console.log('eek');
-        console.log('aa');
-      });
+      this.setState({ editButtonIsHidden: true });
     }
   };
 
   handleCloseEditClick = (e) => {
     e.preventDefault();
-    console.log('editclose');
     if (this.state.editButtonIsHidden) {
       this.setState({ editButtonIsHidden: false });
     }

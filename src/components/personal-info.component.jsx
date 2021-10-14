@@ -6,7 +6,6 @@ import FormInput from './Form-input.component';
 class PersonalInfo extends React.Component {
   render() {
     const handleChange2 = this.props.handleChange2;
-    console.log('render personal-info, this.state= ', this.state, ' done');
     return (
       <form className="personal-info" name="sss">
         <label className="personal-info-label">Personal Info</label>

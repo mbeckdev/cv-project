@@ -14,20 +14,10 @@ class ExperienceSection extends React.Component {
       to: '',
       key: '',
     };
-
-    console.log('this.state in (1)experience constructor', this.state);
-    console.log('this.props in (1)experience constructor', this.props);
   }
 
   render() {
-    console.log('this.state2', this.state);
-
     const handleChange9 = this.props.handleChange9;
-    console.log('this.props in experience-section before render', this.props);
-    console.log(
-      'this.props.theExperience.id in experience-section before render',
-      this.props.theExperience.id
-    );
 
     return (
       <div
