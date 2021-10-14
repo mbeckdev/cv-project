@@ -6,6 +6,7 @@ import FormInput from './Form-input.component';
 class PersonalInfo extends React.Component {
   render() {
     const handleChange2 = this.props.handleChange2;
+    console.log('this.props from personal-info', this.props);
     return (
       <form className="personal-info" name="sss">
         <label className="personal-info-label">Personal Info</label>
@@ -15,7 +16,7 @@ class PersonalInfo extends React.Component {
           handleChange={handleChange2}
           label="Name"
           type="text"
-          value={this.props.name}
+          value={this.props.personal.name}
           required
         />
 
@@ -24,7 +25,7 @@ class PersonalInfo extends React.Component {
           handleChange={handleChange2}
           label="Title"
           type="text"
-          value={this.props.title}
+          value={this.props.personal.title}
           required
         />
         <FormInput
@@ -32,7 +33,7 @@ class PersonalInfo extends React.Component {
           handleChange={handleChange2}
           label="Email"
           type="email"
-          value={this.props.email}
+          value={this.props.personal.email}
           required
         />
         <FormInput
@@ -40,7 +41,7 @@ class PersonalInfo extends React.Component {
           handleChange={handleChange2}
           label="Phone Number"
           type="tel"
-          value={this.props.phoneNumber}
+          value={this.props.personal.phoneNumber}
           required
         />
 
@@ -49,7 +50,7 @@ class PersonalInfo extends React.Component {
           handleChange={handleChange2}
           label="Description"
           type="text"
-          value={this.props.description}
+          value={this.props.personal.description}
           required
         />
       </form>

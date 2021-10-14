@@ -3,7 +3,6 @@ import '../styles/preview-experience-section.styles.scss';
 
 function PreviewExperienceSection(props) {
   let position = props.experience.position;
-  // let position = props.theState.experiences[0].position;
   let mainTasks = props.experience['main-tasks'];
   let company = props.experience.company;
   let city = props.experience.city;
@@ -28,7 +27,7 @@ function PreviewExperienceSection(props) {
           <p>
             <span className="bolder">{position}</span>
           </p>
-          <p>mainTasks: {mainTasks}</p>
+          <p>{mainTasks}</p>
         </div>
       </div>
     </div>

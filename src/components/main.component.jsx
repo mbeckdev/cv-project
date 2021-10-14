@@ -11,12 +11,12 @@ class Main extends React.Component {
 
     this.state = {
       personal: {
-        name: 'Bartholemew Lollipop',
-        title: 'Front end React developer',
-        email: 'bLollipop@gmail.com',
+        name: 'Mario Guy',
+        title: 'Plumber and Professional Rescuer',
+        email: 'mguy@gmail.com',
         phoneNumber: '123-456-7890',
         description:
-          'Looking for that first front-end react role coming from a mechanical engineering background',
+          'Looking for a front-end react role coming from a plumbing background',
       },
       experiences: [
         {
@@ -41,7 +41,7 @@ class Main extends React.Component {
           position: 'Rescuer',
           'main-tasks': 'Fighting crime and rescuing Peach',
           company: "Brother's Fight Stuff",
-          city: 'Barcelona',
+          city: 'Paris',
           from: 'Mar 02',
           to: 'Mar 03',
           id: uniqid(),
@@ -52,14 +52,14 @@ class Main extends React.Component {
           school: 'Italian School of Plumbing',
           degree: 'Plumbing',
           from: 'May 67',
-          to: 'Jan 72',
+          to: 'Jan 85',
           id: uniqid(),
         },
         {
           school: 'School of Hard Knocks',
           degree: 'Rescuing Princesses',
-          from: 'May2 72',
-          to: 'Jan2 74',
+          from: 'May 85',
+          to: 'Oct 21',
           id: uniqid(),
         },
       ],
@@ -119,7 +119,7 @@ class Main extends React.Component {
     e.preventDefault();
 
     let emptyExperience = {
-      position: 'durrrrr',
+      position: '',
       'main-tasks': '',
       company: '',
       city: '',
