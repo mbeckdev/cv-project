@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# cv-project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React project that lets you enter info to create a resume/cv
 
-## Available Scripts
+## Notes
 
-In the project directory, you can run:
+Enter some info and it shows up on a resume/cv looking thing.
 
-### `yarn start`
+## Things I learned
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+holy moly, so many things
+- uniqid() is great for being a key in a list of react components
+- you don't need a constructor on every single component if it's just using props!
+- out of the 4 CRUD actions (Create Read Update Delete), Read is the easiest, Update is the hardest
+- \<input/> value attributes should just read from the state. Then when you change in the input, call a function to update the state.
+- code snipets are awesome! especiially the VSCode extension 'ES7 React/Redux/GraphQL/React-Native snippets'
+  - you can type 'rfce' and an huge bunch of code appears!
+- updating lists in React
+- How to pass multiple arguments in a function from a child component click all the way up 3 or 4 levels to where the function lives.
+- setState is your friend
+```
+this.setState((prevState, props)=>
+      ({
+        task: {
+          text: e.target.value,
+          id: this.state.task.id,
+        },
+      }),
+      () => {
+        console.log('Some message');
+        console.log('Another message');
+      }
+    );
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+### Learning React
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- When you're learning React, start with one file. Create one extra component and stick it at the end, in the same file.  When you get the props passing correctly, then you can easily pull that component out into it's own file and get the imports hooked up.   
+- I started from the component and worked my way up and confused myself.  I'm sure now that I understand all the little working parts it wouldn't be so confusing.
+- I had to stop and create a scrap project I called the world's smallest CRUD app to figure out where I was going wrong.  When in doubt, go simple. As simple as you can.
 
-### `yarn build`
+### Next Time / Possible Improvements
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Add the ability to print it out, pdf or actual printing.
+- Could try using more forms and onSubmit functions - just so I can get more practice using them. 
+ - The way I have it now is that everything is updated on the input change instead of clicking submit to write to the state.
