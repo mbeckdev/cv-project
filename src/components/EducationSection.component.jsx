@@ -52,7 +52,7 @@ class EducationSection extends React.Component {
             )
           }
         >
-          Delete This Experience Section
+          Delete This Education Section
         </button>
       </div>
     );

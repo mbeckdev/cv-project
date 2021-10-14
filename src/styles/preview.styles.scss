@@ -2,7 +2,7 @@
   width: 900px;
   background-color: white;
   color: black;
-  margin-top: 2rem;
+  // margin-top: 2rem;
   box-shadow: 1px 1px 10px black;
   position: relative;
 
@@ -19,11 +19,13 @@
   }
 
   .personal-section {
+    background-color: #154c79;
+    color: rgb(249, 254, 255);
+
     .name-in-title {
       font-size: x-large;
       font-size: 42px;
       text-align: left;
-      background-color: #154c79;
       padding-left: 10px;
     }
 
@@ -33,19 +35,16 @@
       align-items: center;
 
       text-align: right;
-      background-color: #154c79;
     }
 
     .the-title {
       font-size: larger;
       text-align: left;
-      background-color: #154c79;
       padding-left: 10px;
     }
 
     .name-and-email p {
       text-align: right;
-      background-color: #154c79;
       padding-right: 10px;
     }
   }

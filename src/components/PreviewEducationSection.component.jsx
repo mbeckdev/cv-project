@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/preview-education-section.styles.scss';
 
 function PreviewEducationSection({ education: { school, degree, from, to } }) {
   let theseStyles = { margin: '10px 0' };
@@ -8,7 +9,7 @@ function PreviewEducationSection({ education: { school, degree, from, to } }) {
       <div className="education-section">
         <div className="company-and-dates">
           <p>
-            {school}, {degree}
+            {school}, <span className="bolder">{degree}</span>
           </p>
 
           <p>

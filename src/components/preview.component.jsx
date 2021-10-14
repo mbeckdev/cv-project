@@ -22,6 +22,7 @@ const Preview = (props) => {
       >
         Edit
       </button>
+
       <div className="personal-section">
         <div className="name-in-title">{name}</div>
 

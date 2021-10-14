@@ -1,5 +1,6 @@
 $sub-color: #282c34;
 $main-color: lighten(#282c34, 80%);
+$input-text-color: lighten($sub-color, 60%);
 
 @mixin shrinkLabel {
   top: -16px;
@@ -13,14 +14,17 @@ $main-color: lighten(#282c34, 80%);
 
   .form-input {
     background: none;
-    background-color: white;
-    color: $sub-color;
+    // background-color: white;
+    background-color: rgba(1, 1, 1, 0.651);
+
+    color: $input-text-color;
+    // color: blue;
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
     width: 100%;
     border: none;
-    border-radius: 0;
+    border-radius: 5px;
     border-bottom: 1px solid $sub-color;
     margin: 0px 0;
 
@@ -34,7 +38,8 @@ $main-color: lighten(#282c34, 80%);
   }
 
   .form-input-label {
-    color: $sub-color;
+    // color: $sub-color;
+    color: blue;
     font-size: 16px;
     font-weight: normal;
     position: absolute;

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/preview-experience-section.styles.scss';
 
 function PreviewExperienceSection(props) {
   let position = props.experience.position;
@@ -24,7 +25,9 @@ function PreviewExperienceSection(props) {
           </p>
         </div>
         <div className="position-and-tasks">
-          <p>{position}</p>
+          <p>
+            <span className="bolder">{position}</span>
+          </p>
           <p>mainTasks: {mainTasks}</p>
         </div>
       </div>

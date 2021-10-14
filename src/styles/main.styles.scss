@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+
+  margin-top: 2rem;
   // justify-content: space-around;
   // border: 1px solid orange;
 }
@@ -13,4 +15,14 @@ button {
   width: 300px;
   font-weight: bold;
   cursor: pointer;
+  border-radius: 15px;
+}
+
+@media only screen and (min-width: 1850px) {
+  .main-component {
+    // border: 1px solid red;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
 }

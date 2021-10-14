@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/education-info.styles.scss';
 
 import EducationSection from './EducationSection.component';
 
