@@ -2,9 +2,11 @@
 
 A React project that lets you enter info to create a resume/cv
 
+[See it here!](https://mbeckdev.github.io/cv-project/)
+
 ## Notes
 
-Enter some info and it shows up on a resume/cv looking thing.
+Enter some info for a resume/cv and it shows up
 
 ## Things I learned
 
@@ -45,3 +47,4 @@ this.setState((prevState, props)=>
 - Add the ability to print it out, pdf or actual printing.
 - Could try using more forms and onSubmit functions - just so I can get more practice using them. 
  - The way I have it now is that everything is updated on the input change instead of clicking submit to write to the state.
+- Saving to localStorage
