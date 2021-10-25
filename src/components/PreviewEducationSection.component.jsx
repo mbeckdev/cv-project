@@ -8,15 +8,15 @@ function PreviewEducationSection({ education: { school, degree, from, to } }) {
     <div className="preview-education-section" style={theseStyles}>
       <div className="education-section">
         <div className="company-and-dates">
-          <p>
-            {school}, <span className="bolder">{degree}</span>
-          </p>
+          <p>{school},</p>
 
           <p>
             {from} - {to}
           </p>
         </div>
-        <div className="position-and-tasks"></div>
+        <div className="degree">
+          <span className="bolder">{degree}</span>
+        </div>
       </div>
     </div>
   );

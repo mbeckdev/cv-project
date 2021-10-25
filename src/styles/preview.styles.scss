@@ -1,8 +1,8 @@
 .preview {
-  width: 900px;
+  width: 100%;
+  font-size: small;
   background-color: white;
   color: black;
-  // margin-top: 2rem;
   box-shadow: 1px 1px 10px black;
   position: relative;
 
@@ -10,8 +10,7 @@
     position: absolute;
     top: 0;
     right: 1rem;
-    width: 10rem;
-    // height: 300px;
+    width: 3rem;
     background-color: rgb(132, 215, 248);
     border-radius: 10px;
     font-size: larger;
@@ -33,7 +32,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-
       text-align: right;
     }
 
@@ -62,21 +60,25 @@
       margin: 2px 0;
       border: 1px solid grey;
     }
+  }
+}
 
-    .experience-section {
-      display: flex;
-
-      .company-and-dates {
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-        margin-right: 20px;
-      }
-
-      .position-and-tasks {
-        display: flex;
-        flex-direction: column;
-      }
+@media only screen and (min-width: 500px) {
+  .preview {
+    #preview-edit-button {
+      width: 10rem;
     }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .preview {
+    font-size: medium;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .preview {
+    width: 900px;
   }
 }

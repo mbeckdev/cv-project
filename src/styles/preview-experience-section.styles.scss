@@ -1,3 +1,29 @@
 .bolder {
   font-weight: bolder;
 }
+
+.preview-experience-section .experience-section {
+  display: flex;
+  flex-direction: row;
+
+  .company-and-dates {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    min-width: 150px;
+    margin-right: 20px;
+    @media only screen and (min-width: 400px) {
+      width: 200px;
+      min-width: 200px;
+    }
+    @media only screen and (min-width: 600px) {
+      width: 250px;
+      min-width: 250px;
+    }
+  }
+
+  .position-and-tasks {
+    display: flex;
+    flex-direction: column;
+  }
+}
