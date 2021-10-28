@@ -3,6 +3,62 @@ import '../styles/personal-info.styles.scss';
 
 import FormInput from './Form-input.component';
 
+const PersonalInfo2 = (props) => {
+  console.log('props from personal-info2', props);
+  return (
+    <div>
+      <div>personal info stuff</div>
+      <form className="personal-info" name="sss">
+        <label className="personal-info-label">Personal Info</label>
+
+        <FormInput
+          aName="name"
+          handleChange={props.handleChange}
+          label="Name"
+          type="text"
+          value={props.personal.name}
+          // required
+        />
+        {/* 
+        <FormInput
+          aName="title"
+          handleChange={handleChange2}
+          label="Title"
+          type="text"
+          value={this.props.personal.title}
+          required
+        />
+        <FormInput
+          aName="email"
+          handleChange={handleChange2}
+          label="Email"
+          type="email"
+          value={this.props.personal.email}
+          required
+        />
+        <FormInput
+          aName="phoneNumber"
+          handleChange={handleChange2}
+          label="Phone Number"
+          type="tel"
+          value={this.props.personal.phoneNumber}
+          required
+        />
+
+        <FormInput
+          aName="description"
+          handleChange={handleChange2}
+          label="Description"
+          type="text"
+          value={this.props.personal.description}
+          required
+        /> */}
+      </form>
+    </div>
+  );
+};
+export { PersonalInfo2 };
+
 class PersonalInfo extends React.Component {
   render() {
     const handleChange2 = this.props.handleChange2;

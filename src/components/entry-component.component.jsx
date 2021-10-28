@@ -1,8 +1,56 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/entry-component.styles.scss';
-import PersonalInfo from './Personal-info.component';
+import PersonalInfo, { PersonalInfo2 } from './Personal-info.component';
 import ExperienceInfo from './Experience-info.component';
 import EducationInfo from './Education-info.component';
+
+const EntryComponent2 = (props) => {
+  // let
+
+  console.log('props from entrycomponent2', props);
+  console.log('editbuttonishidden = asdfasdf ', props.editButtonIsHidden);
+  let hiddenClassName = !props.editButtonIsHidden ? 'hidden' : '';
+  // useEffect(() => {
+  //   console.log('does this wrok');
+  //   hiddenClassName = !props.editButtonIsHidden ? 'hidden' : '';
+  //   console.log('hiddenclassname = ', hiddenClassName);
+  // });
+  // hiddenClassName = '';
+
+  return (
+    <div>
+      <div>entry component 2 stuff here</div>
+      <div>entry component 2 stuff here</div>
+      <div>entry component 2 stuff here</div>
+      <div className={`entry-component ${hiddenClassName}`}>
+        <button id="close-entry-component" onClick={props.handleCloseEditClick}>
+          X
+        </button>
+
+        <PersonalInfo2
+          personal={props.personal}
+          // handleChange2={handleChange3}
+          handleChange={props.handleChange}
+        />
+        {/* 
+        <ExperienceInfo
+          experiences={this.props.theState.experiences}
+          handleChange2={handleChange3}
+          handleAddSectionClick={this.props.handleAddSectionClick}
+          handleDeleteSectionClick={this.props.handleDeleteSectionClick}
+        />
+
+        <EducationInfo
+          educations={this.props.theState.educations}
+          handleChange2={handleChange3}
+          handleDeleteSectionClick={this.props.handleDeleteSectionClick}
+          handleAddSectionClick={this.props.handleAddSectionClick}
+        /> */}
+      </div>
+    </div>
+  );
+};
+export { EntryComponent2 };
 
 class EntryComponent extends React.Component {
   render() {
