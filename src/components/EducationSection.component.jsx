@@ -1,6 +1,6 @@
 import React from 'react';
 
-import FormInput from './Form-input.component';
+import FormInput from './FormInput.component';
 
 const EducationSection2 = (props) => {
   return (

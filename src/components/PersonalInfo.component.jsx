@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/personal-info.styles.scss';
 
-import FormInput from './Form-input.component';
+import FormInput from './FormInput.component';
 
 const PersonalInfo2 = (props) => {
   console.log('props from personal-info2', props);

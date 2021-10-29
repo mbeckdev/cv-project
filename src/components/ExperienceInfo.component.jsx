@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/experience-info.styles.scss';
-import ExperienceSection2 from './Experience-section.component';
+import ExperienceSection2 from './ExperienceSection.component';
 
 const ExperienceInfo2 = (props) => {
   return (

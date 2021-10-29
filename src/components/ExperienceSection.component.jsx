@@ -1,5 +1,5 @@
 import React from 'react';
-import FormInput from './Form-input.component';
+import FormInput from './FormInput.component';
 
 const ExperienceSection2 = (props) => {
   return (

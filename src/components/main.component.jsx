@@ -3,7 +3,7 @@ import '../styles/main.styles.scss';
 import uniqid from 'uniqid';
 
 import Preview2 from './Preview.component';
-import EntryComponent2 from './Entry-component.component';
+import EntryComponent2 from './EntryComponent.component';
 
 function Main2() {
   const [personal, setPersonal] = useState({

@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/entry-component.styles.scss';
-import PersonalInfo2 from './Personal-info.component';
-import ExperienceInfo2 from './Experience-info.component';
-import EducationInfo2 from './Education-info.component';
+import PersonalInfo2 from './PersonalInfo.component';
+import ExperienceInfo2 from './ExperienceInfo.component';
+import EducationInfo2 from './EducationInfo.component';
 
 const EntryComponent2 = (props) => {
   let hiddenClassName = !props.editButtonIsHidden ? 'hidden' : '';
