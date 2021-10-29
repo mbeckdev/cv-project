@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import '../styles/entry-component.styles.scss';
 import PersonalInfo, { PersonalInfo2 } from './Personal-info.component';
 import ExperienceInfo, { ExperienceInfo2 } from './Experience-info.component';
-import EducationInfo from './Education-info.component';
+import EducationInfo, { EducationInfo2 } from './Education-info.component';
 
 const EntryComponent2 = (props) => {
   // let
@@ -18,35 +18,30 @@ const EntryComponent2 = (props) => {
   // hiddenClassName = '';
 
   return (
-    <div>
-      <div>entry component 2 stuff here</div>
-      <div>entry component 2 stuff here</div>
-      <div>entry component 2 stuff here</div>
-      <div className={`entry-component ${hiddenClassName}`}>
-        <button id="close-entry-component" onClick={props.handleCloseEditClick}>
-          X
-        </button>
+    <div className={`entry-component ${hiddenClassName}`}>
+      <button id="close-entry-component" onClick={props.handleCloseEditClick}>
+        X
+      </button>
 
-        <PersonalInfo2
-          personal={props.personal}
-          // handleChange2={handleChange3}
-          handleChange={props.handleChange}
-        />
+      <PersonalInfo2
+        personal={props.personal}
+        // handleChange2={handleChange3}
+        handleChange={props.handleChange}
+      />
 
-        <ExperienceInfo2
-          experiences={props.experiences}
-          handleChange={props.handleChange}
-          handleAddSectionClick={props.handleAddSectionClick}
-          handleDeleteSectionClick={props.handleDeleteSectionClick}
-        />
-        {/* 
-        <EducationInfo
-          educations={this.props.theState.educations}
-          handleChange2={handleChange3}
-          handleDeleteSectionClick={this.props.handleDeleteSectionClick}
-          handleAddSectionClick={this.props.handleAddSectionClick}
-        /> */}
-      </div>
+      <ExperienceInfo2
+        experiences={props.experiences}
+        handleChange={props.handleChange}
+        handleAddSectionClick={props.handleAddSectionClick}
+        handleDeleteSectionClick={props.handleDeleteSectionClick}
+      />
+
+      <EducationInfo2
+        educations={props.educations}
+        handleChange={props.handleChange}
+        handleDeleteSectionClick={props.handleDeleteSectionClick}
+        handleAddSectionClick={props.handleAddSectionClick}
+      />
     </div>
   );
 };

@@ -119,7 +119,6 @@ function Main2() {
         (item) => item.id === thisExperienceId
       );
 
-      // With Hooks and functional components
       let newExperiences = experiences;
       newExperiences[thisIndex][labelName] = e.target.value;
       setExperiences([...newExperiences]);
@@ -211,7 +210,6 @@ function Main2() {
 
   return (
     <div className="main-component" style={{ backgroundColor: 'grey' }}>
-      <div>NEW MAIN2 STARTS HERE USING FUNCTIONAL COMPONENTS</div>
       <EntryComponent2
         // theState={this.state}
         personal={personal}
