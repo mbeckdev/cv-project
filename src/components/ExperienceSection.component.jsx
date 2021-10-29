@@ -14,7 +14,6 @@ const ExperienceSection2 = (props) => {
         label="Position"
         type="text"
         value={props.theExperience.position}
-        required
       />
 
       <FormInput
@@ -23,7 +22,6 @@ const ExperienceSection2 = (props) => {
         label="Main Tasks"
         type="textarea"
         value={props.theExperience['main-tasks']}
-        required
       />
 
       <FormInput
@@ -32,7 +30,6 @@ const ExperienceSection2 = (props) => {
         label="Company"
         type="text"
         value={props.theExperience.company}
-        required
       />
 
       <FormInput
@@ -41,7 +38,6 @@ const ExperienceSection2 = (props) => {
         label="City"
         type="text"
         value={props.theExperience.city}
-        required
       />
 
       <FormInput
@@ -50,7 +46,6 @@ const ExperienceSection2 = (props) => {
         label="From"
         type="text"
         value={props.theExperience.from}
-        required
       />
 
       <FormInput
@@ -59,7 +54,6 @@ const ExperienceSection2 = (props) => {
         label="To"
         type="text"
         value={props.theExperience.to}
-        required
       />
 
       <button

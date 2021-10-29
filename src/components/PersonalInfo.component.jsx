@@ -4,10 +4,8 @@ import '../styles/personal-info.styles.scss';
 import FormInput from './FormInput.component';
 
 const PersonalInfo2 = (props) => {
-  console.log('props from personal-info2', props);
   return (
     <div>
-      <div>personal info stuff</div>
       <form className="personal-info" name="sss">
         <label className="personal-info-label">Personal Info</label>
 
@@ -17,7 +15,6 @@ const PersonalInfo2 = (props) => {
           label="Name"
           type="text"
           value={props.personal.name}
-          // required
         />
 
         <FormInput
@@ -26,23 +23,22 @@ const PersonalInfo2 = (props) => {
           label="Title"
           type="text"
           value={props.personal.title}
-          required
         />
+
         <FormInput
           aName="email"
           handleChange={props.handleChange}
           label="Email"
           type="email"
           value={props.personal.email}
-          required
         />
+
         <FormInput
           aName="phoneNumber"
           handleChange={props.handleChange}
           label="Phone Number"
           type="tel"
           value={props.personal.phoneNumber}
-          required
         />
 
         <FormInput
