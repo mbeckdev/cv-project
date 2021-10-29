@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../styles/entry-component.styles.scss';
 import PersonalInfo2 from './Personal-info.component';
 import ExperienceInfo2 from './Experience-info.component';
