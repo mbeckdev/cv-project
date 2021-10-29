@@ -1,6 +1,36 @@
 import React from 'react';
 import '../styles/experience-info.styles.scss';
-import ExperienceSection from './Experience-section.component';
+import ExperienceSection, {
+  ExperienceSection2,
+} from './Experience-section.component';
+
+const ExperienceInfo2 = (props) => {
+  return (
+    <form className="experience-info">
+      <label className="experience-info-label">Experience Info</label>
+      {props.experiences.map((experience) => (
+        <ExperienceSection2
+          handleChange={props.handleChange}
+          handleDeleteSectionClick={props.handleDeleteSectionClick}
+          key={experience.id}
+          theExperience={experience}
+        />
+      ))}
+
+      {/* <div className="button-container">
+          <button
+            onClick={(e) => {
+              this.props.handleAddSectionClick(e, 'experience');
+            }}
+          >
+            Add New Experience Section
+          </button>
+        </div> */}
+    </form>
+  );
+};
+
+export { ExperienceInfo2 };
 
 class ExperienceInfo extends React.Component {
   render() {

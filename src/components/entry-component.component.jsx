@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import '../styles/entry-component.styles.scss';
 import PersonalInfo, { PersonalInfo2 } from './Personal-info.component';
-import ExperienceInfo from './Experience-info.component';
+import ExperienceInfo, { ExperienceInfo2 } from './Experience-info.component';
 import EducationInfo from './Education-info.component';
 
 const EntryComponent2 = (props) => {
@@ -32,14 +32,14 @@ const EntryComponent2 = (props) => {
           // handleChange2={handleChange3}
           handleChange={props.handleChange}
         />
-        {/* 
-        <ExperienceInfo
-          experiences={this.props.theState.experiences}
-          handleChange2={handleChange3}
-          handleAddSectionClick={this.props.handleAddSectionClick}
-          handleDeleteSectionClick={this.props.handleDeleteSectionClick}
-        />
 
+        <ExperienceInfo2
+          experiences={props.experiences}
+          handleChange={props.handleChange}
+          handleAddSectionClick={props.handleAddSectionClick}
+          handleDeleteSectionClick={props.handleDeleteSectionClick}
+        />
+        {/* 
         <EducationInfo
           educations={this.props.theState.educations}
           handleChange2={handleChange3}

@@ -87,46 +87,111 @@ function Main2() {
     let whichStateProp = e.target.name; // like title or email
     let section = '';
 
-    // if (e.target.parentNode.parentNode.className === 'personal-info') {
-    //   section = 'personal';
-    //   this.setState((prevState, props) => ({
-    //     [section]: {
-    //       ...prevState[section],
-    //       [whichStateProp]: e.target.value,
-    //     },
-    //   }));
-    // } else if (
-    //   e.target.parentNode.parentNode.parentNode.className === 'education-info'
-    // ) {
-    //   section = 'educations';
-    //   let labelName = e.target.name;
+    if (e.target.parentNode.parentNode.className === 'personal-info') {
+      console.log('main says in personal section');
+      // section = 'personal';
 
-    //   //// which experience/education item are we in?
-    //   let educationSectionNode = e.target.parentNode.parentNode;
-    //   let thisEducationId = educationSectionNode.id;
-    //   let thisIndex = this.state.educations.findIndex(
-    //     (item) => item.id === thisEducationId
-    //   );
+      // let changedPersonal = personal;
+      let changedPersonal = { ...personal, [whichStateProp]: e.target.value };
+      setPersonal(changedPersonal);
+    } else if (
+      e.target.parentNode.parentNode.parentNode.className === 'education-info'
+    ) {
+      console.log('main says in educations section');
+      // section = 'educations';
 
-    //   let newEducations = this.state.educations;
-    //   newEducations[thisIndex][labelName] = e.target.value;
-    //   this.setState({ educations: newEducations });
-    // } else if (
-    //   e.target.parentNode.parentNode.parentNode.className === 'experience-info'
-    // ) {
-    //   section = 'experiences';
-    //   let labelName = e.target.name;
+      let labelName = e.target.name;
+      //// which experience/education item are we in?
+      let educationSectionNode = e.target.parentNode.parentNode;
+      let thisEducationId = educationSectionNode.id;
+      let thisIndex = educations.findIndex(
+        (item) => item.id === thisEducationId
+      );
+      // let thisIndex = this.state.educations.findIndex(
+      //   (item) => item.id === thisEducationId
+      // );
+      let newEducations = educations;
+      // let newEducations = this.state.educations;
+      newEducations[thisIndex][labelName] = e.target.value;
+      setEducations(newEducations);
+      // this.setState({ educations: newEducations });
+    } else if (
+      e.target.parentNode.parentNode.parentNode.className === 'experience-info'
+    ) {
+      console.log('main says in experiences section');
+      //   section = 'experiences';
+      let labelName = e.target.name;
+      //// which experience are we in????????????
+      let thisExperienceId = e.target.parentNode.parentNode.id;
+      let thisIndex = experiences.findIndex(
+        (item) => item.id === thisExperienceId
+      );
 
-    //   //// which experience are we in????????????
-    //   let thisExperienceId = e.target.parentNode.parentNode.id;
-    //   let thisIndex = this.state.experiences.findIndex(
-    //     (item) => item.id === thisExperienceId
-    //   );
+      // With Hooks and functional components
+      let newExperiences = experiences;
+      newExperiences[thisIndex][labelName] = e.target.value;
+      setExperiences(newExperiences);
 
-    //   let newExperiences = this.state.experiences;
-    //   newExperiences[thisIndex][labelName] = e.target.value;
-    //   this.setState({ experiences: newExperiences });
-    // }
+      // With class components
+      // let newExperiences = this.state.experiences;
+      // newExperiences[thisIndex][labelName] = e.target.value;
+      // this.setState({ experiences: newExperiences });
+    }
+  };
+
+  const findMyIndex = (inWhat, whatId) => {
+    console.log('finding index');
+    let theIndex = inWhat.findIndex((item) => item.id === whatId);
+    return theIndex;
+  };
+
+  const handleDeleteSectionClick = (
+    e,
+    thisEducationOrThisExperience,
+    educationOrExperience
+  ) => {
+    e.preventDefault();
+    console.log('delete section click clicked');
+
+    let sectionToSet = '';
+    if (educationOrExperience === 'education') {
+      // sectionToSet = educations;
+      let newEducations = educations;
+      let thisIndex = findMyIndex(
+        newEducations,
+        thisEducationOrThisExperience.id
+      );
+      newEducations.splice(thisIndex, 1);
+      setEducations(newEducations);
+    } else if (educationOrExperience === 'experience') {
+      // sectionToSet = experiences;
+      let newExperiences = experiences;
+      let thisIndex = findMyIndex(
+        newExperiences,
+        thisEducationOrThisExperience.id
+      );
+      newExperiences.splice(thisIndex, 1);
+      // we have to use this way instead of
+      // setExperiences(newExperiences) I think because
+      // splice mutates the array
+      // setExperiences(() => [...newExperiences]);
+      setExperiences(newExperiences);
+    }
+
+    let thisIndex = [sectionToSet].findIndex(
+      (item) => item.id === thisEducationOrThisExperience.id
+    );
+    console.log('thisIndex from main handle dlete ', thisIndex);
+    console.log('sectionToSet ', sectionToSet);
+    console.log('sectionToSet[0] ', sectionToSet[0]);
+    console.log('educationOrExperience ', educationOrExperience);
+    // console.log('[sectionToSet] ', [sectionToSet]);
+    // console.log('{[sectionToSet]} ',{[sectionToSet]});
+    // console.log('experiences ', experiences);
+
+    // let newSections = this.state[sectionToSet];
+    // newSections.splice(thisIndex, 1);
+    // this.setState({ [sectionToSet]: newSections });
   };
 
   useEffect(() => {
@@ -146,7 +211,7 @@ function Main2() {
         handleChange={handleChange}
         // handleAddSectionClick={this.handleAddSectionClick}
         handleCloseEditClick={handleCloseEditClick}
-        // handleDeleteSectionClick={this.handleDeleteSectionClick}
+        handleDeleteSectionClick={handleDeleteSectionClick}
       />
       <Preview2
         personal={personal}

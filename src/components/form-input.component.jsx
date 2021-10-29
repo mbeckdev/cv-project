@@ -1,15 +1,15 @@
 import React from 'react';
 import '../styles/form-input.styles.scss';
 
-const FormInput = (
-  props) => {
-    let 
+const FormInput = ({ label, value, handleChange, type, aName }) => {
+  // let
   return (
     <div className="form-input-container">
       <input
         className="form-input"
-        onChange={props.handleChange}
-        name={props.personal.name}
+        onChange={handleChange}
+        name={aName}
+        // name={props.personal.name}
         type={type}
         value={value}
       />

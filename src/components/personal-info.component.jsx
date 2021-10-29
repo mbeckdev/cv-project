@@ -19,40 +19,40 @@ const PersonalInfo2 = (props) => {
           value={props.personal.name}
           // required
         />
-        {/* 
+
         <FormInput
           aName="title"
-          handleChange={handleChange2}
+          handleChange={props.handleChange}
           label="Title"
           type="text"
-          value={this.props.personal.title}
+          value={props.personal.title}
           required
         />
         <FormInput
           aName="email"
-          handleChange={handleChange2}
+          handleChange={props.handleChange}
           label="Email"
           type="email"
-          value={this.props.personal.email}
+          value={props.personal.email}
           required
         />
         <FormInput
           aName="phoneNumber"
-          handleChange={handleChange2}
+          handleChange={props.handleChange}
           label="Phone Number"
           type="tel"
-          value={this.props.personal.phoneNumber}
+          value={props.personal.phoneNumber}
           required
         />
 
         <FormInput
           aName="description"
-          handleChange={handleChange2}
+          handleChange={props.handleChange}
           label="Description"
           type="text"
-          value={this.props.personal.description}
+          value={props.personal.description}
           required
-        /> */}
+        />
       </form>
     </div>
   );
