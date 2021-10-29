@@ -81,12 +81,8 @@ function Main2() {
   // When you type in a field
   const handleChange = (e) => {
     let whichStateProp = e.target.name; // like title or email
-    // let section = '';
 
     if (e.target.parentNode.parentNode.className === 'personal-info') {
-      // section = 'personal';
-
-      // let changedPersonal = personal;
       let changedPersonal = { ...personal, [whichStateProp]: e.target.value };
       setPersonal(changedPersonal);
     } else if (
