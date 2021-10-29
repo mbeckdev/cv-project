@@ -17,15 +17,15 @@ const ExperienceInfo2 = (props) => {
         />
       ))}
 
-      {/* <div className="button-container">
-          <button
-            onClick={(e) => {
-              this.props.handleAddSectionClick(e, 'experience');
-            }}
-          >
-            Add New Experience Section
-          </button>
-        </div> */}
+      <div className="button-container">
+        <button
+          onClick={(e) => {
+            props.handleAddSectionClick(e, 'experience');
+          }}
+        >
+          Add New Experience Section
+        </button>
+      </div>
     </form>
   );
 };

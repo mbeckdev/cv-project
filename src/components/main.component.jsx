@@ -85,7 +85,7 @@ function Main2() {
   // When you type in a field
   const handleChange = (e) => {
     let whichStateProp = e.target.name; // like title or email
-    let section = '';
+    // let section = '';
 
     if (e.target.parentNode.parentNode.className === 'personal-info') {
       console.log('main says in personal section');
@@ -98,8 +98,6 @@ function Main2() {
       e.target.parentNode.parentNode.parentNode.className === 'education-info'
     ) {
       console.log('main says in educations section');
-      // section = 'educations';
-
       let labelName = e.target.name;
       //// which experience/education item are we in?
       let educationSectionNode = e.target.parentNode.parentNode;
@@ -107,19 +105,13 @@ function Main2() {
       let thisIndex = educations.findIndex(
         (item) => item.id === thisEducationId
       );
-      // let thisIndex = this.state.educations.findIndex(
-      //   (item) => item.id === thisEducationId
-      // );
       let newEducations = educations;
-      // let newEducations = this.state.educations;
       newEducations[thisIndex][labelName] = e.target.value;
-      setEducations(newEducations);
-      // this.setState({ educations: newEducations });
+      setEducations([...newEducations]);
     } else if (
       e.target.parentNode.parentNode.parentNode.className === 'experience-info'
     ) {
       console.log('main says in experiences section');
-      //   section = 'experiences';
       let labelName = e.target.name;
       //// which experience are we in????????????
       let thisExperienceId = e.target.parentNode.parentNode.id;
@@ -130,12 +122,7 @@ function Main2() {
       // With Hooks and functional components
       let newExperiences = experiences;
       newExperiences[thisIndex][labelName] = e.target.value;
-      setExperiences(newExperiences);
-
-      // With class components
-      // let newExperiences = this.state.experiences;
-      // newExperiences[thisIndex][labelName] = e.target.value;
-      // this.setState({ experiences: newExperiences });
+      setExperiences([...newExperiences]);
     }
   };
 
@@ -153,9 +140,8 @@ function Main2() {
     e.preventDefault();
     console.log('delete section click clicked');
 
-    let sectionToSet = '';
+    // let sectionToSet = '';
     if (educationOrExperience === 'education') {
-      // sectionToSet = educations;
       let newEducations = educations;
       let thisIndex = findMyIndex(
         newEducations,
@@ -164,7 +150,7 @@ function Main2() {
       newEducations.splice(thisIndex, 1);
       setEducations(newEducations);
     } else if (educationOrExperience === 'experience') {
-      // sectionToSet = experiences;
+      console.log('delete experience...');
       let newExperiences = experiences;
       let thisIndex = findMyIndex(
         newExperiences,
@@ -174,24 +160,49 @@ function Main2() {
       // we have to use this way instead of
       // setExperiences(newExperiences) I think because
       // splice mutates the array
-      // setExperiences(() => [...newExperiences]);
-      setExperiences(newExperiences);
+      setExperiences(() => [...newExperiences]);
     }
+  };
 
-    let thisIndex = [sectionToSet].findIndex(
-      (item) => item.id === thisEducationOrThisExperience.id
-    );
-    console.log('thisIndex from main handle dlete ', thisIndex);
-    console.log('sectionToSet ', sectionToSet);
-    console.log('sectionToSet[0] ', sectionToSet[0]);
-    console.log('educationOrExperience ', educationOrExperience);
-    // console.log('[sectionToSet] ', [sectionToSet]);
-    // console.log('{[sectionToSet]} ',{[sectionToSet]});
-    // console.log('experiences ', experiences);
+  const handleAddSectionClick = (e, educationOrExperience) => {
+    e.preventDefault();
 
-    // let newSections = this.state[sectionToSet];
-    // newSections.splice(thisIndex, 1);
-    // this.setState({ [sectionToSet]: newSections });
+    let emptyExperience = {
+      position: '',
+      'main-tasks': '',
+      company: '',
+      city: '',
+      from: '',
+      to: '',
+      id: uniqid(),
+    };
+
+    let emptyEducation = {
+      school: '',
+      degree: '',
+      from: '',
+      to: '',
+      id: uniqid(),
+    };
+
+    if (educationOrExperience === 'education') {
+      // let newEducations = [...educations, emptyEducation];
+      // setEducations(() => {
+      //   [...newEducations];
+      // });
+    } else if (educationOrExperience === 'experience') {
+      // emptySectionToAdd = emptyExperience;
+      // sectionToSet = 'experiences';
+      let newExperiences = [...experiences, emptyExperience];
+      setExperiences(() => [...newExperiences]);
+
+      console.log('adsfasdf');
+      console.log('newExperiences', newExperiences);
+    } else {
+      console.error(
+        '"education" or "experience" not properly used in handleAddExperienceClick'
+      );
+    }
   };
 
   useEffect(() => {
@@ -207,9 +218,8 @@ function Main2() {
         experiences={experiences}
         educations={educations}
         editButtonIsHidden={editButtonIsHidden}
-        // handleChange3={this.handleChange3}
         handleChange={handleChange}
-        // handleAddSectionClick={this.handleAddSectionClick}
+        handleAddSectionClick={handleAddSectionClick}
         handleCloseEditClick={handleCloseEditClick}
         handleDeleteSectionClick={handleDeleteSectionClick}
       />
