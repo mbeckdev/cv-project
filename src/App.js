@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header.component';
-import Main, { Main2 } from './components/Main.component';
+import Main2 from './components/Main.component';
 import Footer from './components/Footer.component';
 
 import COLORS from './colors';
@@ -15,7 +15,7 @@ function App() {
       }}
     >
       <Header />
-      <Main />
+      {/* <Main /> */}
       <Main2 />
       <Footer />
     </div>
