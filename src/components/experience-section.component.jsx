@@ -16,48 +16,52 @@ const ExperienceSection2 = (props) => {
         value={props.theExperience.position}
         required
       />
-      {/* 
-        <FormInput
-          aName="main-tasks"
-          handleChange={handleChange9}
-          label="Main Tasks"
-          type="textarea"
-          value={this.props.theExperience['main-tasks']}
-          required
-        />
-        <FormInput
-          aName="company"
-          handleChange={handleChange9}
-          label="Company"
-          type="text"
-          value={this.props.theExperience.company}
-          required
-        />
-        <FormInput
-          aName="city"
-          handleChange={handleChange9}
-          label="City"
-          type="text"
-          value={this.props.theExperience.city}
-          required
-        />
-        <FormInput
-          aName="from"
-          handleChange={handleChange9}
-          label="From"
-          type="text"
-          value={this.props.theExperience.from}
-          required
-        />
-        <FormInput
-          aName="to"
-          handleChange={handleChange9}
-          label="To"
-          type="text"
-          value={this.props.theExperience.to}
-          required
-        />
-        */}
+
+      <FormInput
+        aName="main-tasks"
+        handleChange={props.handleChange}
+        label="Main Tasks"
+        type="textarea"
+        value={props.theExperience['main-tasks']}
+        required
+      />
+
+      <FormInput
+        aName="company"
+        handleChange={props.handleChange}
+        label="Company"
+        type="text"
+        value={props.theExperience.company}
+        required
+      />
+
+      <FormInput
+        aName="city"
+        handleChange={props.handleChange}
+        label="City"
+        type="text"
+        value={props.theExperience.city}
+        required
+      />
+
+      <FormInput
+        aName="from"
+        handleChange={props.handleChange}
+        label="From"
+        type="text"
+        value={props.theExperience.from}
+        required
+      />
+
+      <FormInput
+        aName="to"
+        handleChange={props.handleChange}
+        label="To"
+        type="text"
+        value={props.theExperience.to}
+        required
+      />
+
       <button
         onClick={(e) =>
           props.handleDeleteSectionClick(e, props.theExperience, 'experience')
