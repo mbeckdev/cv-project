@@ -4,20 +4,23 @@ A React project that lets you enter info to create a resume/cv
 
 [See it here!](https://mbeckdev.github.io/cv-project/)
 
+
 ## Notes
 
 Enter some info for a resume/cv and it shows up
 
+![screenshot of a cv/resume layout and a section for editing cv/resume](https://github.com/mbeckdev/cv-project/blob/main/cv-pic.png?raw=true)
+
 ## Things I learned
 
-holy moly, so many things
+Holy moly, so many things!
 - uniqid() is great for being a key in a list of react components
-- you don't need a constructor on every single component if it's just using props!
-- out of the 4 CRUD actions (Create Read Update Delete), Read is the easiest, Update is the hardest
+- You don't need a constructor on every single component if it's just using props!
+- Out of the 4 CRUD actions (Create Read Update Delete), Read is the easiest, Update is the hardest
 - \<input/> value attributes should just read from the state. Then when you change in the input, call a function to update the state.
-- code snipets are awesome! especiially the VSCode extension 'ES7 React/Redux/GraphQL/React-Native snippets'
-  - you can type 'rfce' and an huge bunch of code appears!
-- updating lists in React
+- Code snippets are awesome! especiially the VSCode extension 'ES7 React/Redux/GraphQL/React-Native snippets'
+  - You can type 'rfce' and an huge bunch of code appears!
+- Updating lists in React
 - How to pass multiple arguments in a function from a child component click all the way up 3 or 4 levels to where the function lives.
 - setState is your friend
 ```
